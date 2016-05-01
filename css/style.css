@@ -1,0 +1,438 @@
+/* - Index
+/*================================================*/
+/*
+    - 1.    Page Constants
+    - 2.    Fonts
+    - 3.    Background Color
+    - 4.    Page Layout
+    - 5.    Menu Button
+    - 6.    Opening Overlay
+        - 6A. Background Blur
+
+    - 7.    Google Maps
+    - 8.    Slide In
+    - 9.    Switches
+    - 10.   Driver Information
+    - 11.   Driving Mode
+*/
+
+/* - 1. Page Constants
+/*================================================*/
+body, html{
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+#homeLogo{
+    position: absolute;
+    z-index: 200;
+    right: 50px;
+    top: 50px;
+}
+/* - 2. Fonts
+/*================================================*/
+#homeLogo h1{color: black;}
+#homeLogo h2{color: black;}
+h1, h2, h3{
+    color: grey;
+    font-weight: 300;
+}
+h1{
+    font-size: 3em;
+    letter-spacing: 10px;
+    margin-top: 2.5%;
+}
+h2{
+    font-size: 1.5em;
+    font-style: italic;
+}
+#slider h2{
+    font-style: normal;
+}
+.rating h2{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px;
+    margin-left: 5px;
+}
+h3{
+    font-size: 1em;
+    text-transform: uppercase;
+}
+p{
+    margin-top: 10px;
+    font-size: 1em; 
+    font-weight: 300;
+    color: grey;
+}
+/* - 3. Background Colour
+/*================================================*/
+.blueBG {
+    background: #deeff5;
+    opacity: 0.85;
+}
+.whiteBG{
+    background: white;
+    opacity: 0.85;
+}
+/* - 4. Page Layout
+/*================================================*/
+#tutorial {
+	margin-top: 5%;
+}
+.line {
+    width: 87px;
+    height: 3px;
+    background: grey;
+    margin: 0 auto;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+.fullWH{
+    height: 100%;
+    width: 100%;
+}
+.halfWH{
+    left: 0;
+    height: 75%;
+    width: 50%;
+}
+.halfWHlower{
+    bottom: 0;
+    left: 0;
+    height: 25%;
+    width: 50%; 
+}
+.tuteIcons{
+    height: 50px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+#firstHeading{
+    height: 65px;
+}
+.passengerInfo{
+    z-index: 75;
+    position: absolute;
+    top: 0;
+}
+.passengerInfo2{
+    z-index: 75;
+    position: absolute;
+    bottom: 0;
+}
+#pasInfo{
+    border: 2px solid grey;
+}
+.marginPix{
+    letter-spacing: normal;
+    margin-top: 50px;
+}
+.marginTop{margin-top: 50px;}
+.marginTop10{margin-top: 10px;}
+.imageSelect{
+    height: 150px;
+}
+#openingOverlay .imageSelect:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.leftHalf{
+    width: 50%;
+    left: 0;
+    float: left;
+    text-align: center;
+}
+.rightHalf{
+    width: 50%;
+    margin-left: 50%;
+    text-align: center;
+}
+.topHalf{
+    left: 0;
+    text-align: center;
+    margin-top: 5%;
+}
+.bottomHalf{
+    text-align: center;
+    margin-top: 5%;
+}
+/* - 5. Menu Button
+/*================================================*/
+.menuIcon:hover {
+    background: #ebebeb;
+    cursor: pointer;
+}
+.menuIcon{
+    height: 32px;
+    position: absolute;
+	top: 10px;
+	right: 330px;
+	z-index: 120;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* - 6. Opening Overlay
+/*================================================*/
+.overlay{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    margin-top:  15%;
+    top: 0;
+}
+/* - 6.1. Background Blur
+/*================================================*/
+.blur{
+    background: white;
+     -webkit-filter: blur(20px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+    opacity: 0.8;
+    z-index: 75;
+    position: absolute;
+}
+/* - 7. Google Maps
+/*================================================*/
+/*
+     Resources Used:
+    -   Primarily used documentation for Google Maps API,
+        provided by Google themselves.
+        -   https://developers.google.com/maps/documentation/javascript/examples/map-geolocation
+    
+    -   Also used help from StackOverflow with the implementation of Geo Location.
+        -   http://stackoverflow.com/questions/14586916/google-maps-directions-from-users-geo-location
+*/
+/*================================================*/
+#map {
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    right: 25px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+    position: absolute;
+    z-index: 99;
+}
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+.pac-container {
+    font-family: Roboto;
+}
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+#target {
+    width: 345px;
+}
+.border {
+	border: 2px solid grey;
+}
+
+/* - 8. Slide In
+/*================================================*/
+/*
+     Resources Used:
+    -   Used help from StackOverflow with the implementation.
+        -   http://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition
+*/
+/*================================================*/
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+    position: absolute;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+    
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+/* Throwing erros in CSS validator:
+/* https://jigsaw.w3.org/css-validator/validator
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}*/
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+/* Throwing erros in CSS validator:
+/* https://jigsaw.w3.org/css-validator/validator
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}*/
+.pickupSelect {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2.1em;
+    text-transform: none;
+    font-variant: small-caps;
+}
+/* - 9. Switches
+/*================================================*/
+/*
+     Resources Used:
+    -   Used help from the below website with the implementation.
+        -   http://callmenick.com/post/css-toggle-switch-examples
+*/
+/*================================================*/
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+input.cmn-toggle-round-flat + label {
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  background-color: #dddddd;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before,
+input.cmn-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+input.cmn-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 26px;
+  background-color: #dddddd;
+  border-radius: 26px;
+  transition: margin 0.4s, background 0.4s;
+}
+input.cmn-toggle-round-flat:checked + label {
+  background-color: #8ce196;
+}
+input.cmn-toggle-round-flat:checked + label:after {
+  margin-left: 30px;
+  background-color: #8ce196;
+}
+.switch {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px;
+}
+/* - 10. Driver Information
+/*================================================*/
+.driverImage {
+    margin-top: 75px;
+    height: 200px;
+}
+.ratingIcon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+}
+.yesNo {
+    height: 50px;
+    right: 25px;
+    bottom: 25px;
+    position: absolute;
+}
+.yesNo:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+#no{
+    left: 25px;
+    right: auto;
+}
+/* - 11. Driving Mode
+/*================================================*/
+.mode{
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.mode:hover{opacity: 0.8;}
+.modeCaption{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+.modeCaption:hover{opacity: 0.8;}
+#modeSelection{
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    z-index: 250;
+}
+#tutorialBlur{
+    opacity: 0.7;
+}

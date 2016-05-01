@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>CaPool</title>
+        <!-- StyleSheets -->
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!--Online link to Google Web Fonts used, however extra font family is in CSS-->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
+        <!-- JavaScript -->
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/mapTwo.js"></script>
+        <script type="text/javascript" src="js/buttonsTwo.js"></script>
+        <!--Google Maps-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
+    </script>
+	</head>
+	<body>
+        <!-- Section 1: Header -->
+        <header>
+            <!-- Section 1A: Home Navigation -->
+            <nav id="homeLogo">
+                <a href="index.html"><h1>CaPool</h1></a>
+                <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+            </nav>
+            
+            <!-- Section 1B: MenuButton -->
+            <img id="toggle" src="images/menuIcon.png" alt="Menu Button" class="menuIcon">
+            
+            <!-- Section 1C: Adress Input -->
+            <input id="pac-input" class="controls" type="text" placeholder="Destination" onclick="hideTutorial()">
+        </header>
+        
+        <!-- Section 2: Tutorial Overlay -->
+        <div id="tutorial" class="overlay">
+            <div class="marginTop">
+                <div id="arrow">
+                    <img src="images/arrow.png" alt="Driver" class="imageSelect">
+                </div>
+            </div>
+            
+            <h1>Destination</h1>
+            <h2>Please enter your desired drop off destination</h2>
+            
+            <div class="line"></div>
+            
+            <h1>Driver Selection</h1>
+            <h2>Then choose your driver with the following icons</h2>
+            <img src="images/tick.png" alt="Tick" class="tuteIcons">
+            <img src="images/cross.png" alt="Cross" class="tuteIcons">
+        </div>
+        <div id="tutorialBlur" class="blur fullWH"></div>
+        
+        <!-- Section 3: Opening Overlay -->
+        <div id="openingOverlay" class="overlay">
+            <a href="index.html"><h1>CaPool</h1></a>
+            <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+            
+            <nav class="marginTop">
+                <div class="leftHalf">
+                    <a href="driver.html"><img src="images/driver.png" alt="Driver" class="imageSelect">
+                    <h2>Driver</h2></a>
+                </div>
+            
+                <div class="rightHalf">
+                    <img src="images/passenger.png" alt="Passenger" class="imageSelect" onclick="passengerMode()">
+                    <h2>Passenger</h2>
+                </div>
+            </nav>
+        </div>
+        <div id="openingBlur" class="blur fullWH"></div>
+        
+        <!-- Section 4: Google Maps -->
+        <div id="map"></div>
+		
+        <!-- Section 5 (Aside) - Passenger Mode: Driver Information -->    
+        <aside id="drivers" class="passengerInfo halfWH whiteBG border slide-in">
+            <nav id="modeSelection">
+                <a href="index.html"><img src="images/passenger.png" alt="Passenger" class="mode"><h2 class="modeCaption">Passenger Mode</h2></a>
+            </nav>
+            
+            <section id="OneDriver" class="driverList">
+                <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
+                <h1 class="marginPix">Jessica Jones</h1>
+                <h2>503 SWD</h2>
+                
+                <div id="ratingOne" class="marginTop rating">
+                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                    <h2>98</h2>
+
+                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                    <h2>5</h2>
+
+                    <img src="images/car.png" alt="Frown" class="ratingIcon">
+                    <h2>4</h2>
+                </div>
+            </section>
+            <section id="TwoDriver" class="driverList">
+                <img src="images/headshotThree.png" alt="Driver" class="driverImage">
+                <h1 class="marginPix">Marcus Jordan</h1>
+                <h2>225 DDJ</h2>
+                
+                <div id="ratingTwo" class="marginTop rating">
+                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                    <h2>10</h2>
+
+                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                    <h2>1</h2>
+
+                    <img src="images/car.png" alt="Frown" class="ratingIcon">
+                    <h2>4</h2>
+                </div>
+            </section>
+            <section id="ThreeDriver" class="driverList">
+                <img src="images/headshotFive.png" alt="Driver" class="driverImage">
+                <h1 class="marginPix">Maria Black</h1>
+                <h2>166 CMJ</h2>
+                
+                <div id="ratingThree" class="marginTop rating">
+                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                    <h2>55</h2>
+
+                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                    <h2>17</h2>
+
+                    <img src="images/car.png" alt="Frown" class="ratingIcon">
+                    <h2>1</h2>
+                </div>
+            </section>
+            
+            <div class="marginTop">
+                <img src="images/tick.png" alt="Tick" class="yesNo" id="yes">
+                <img src="images/cross.png" alt="Cross" class="yesNo" id="no" onclick="driverList()">
+            </div>
+        </aside>
+        
+        <!-- Section 6 (Aside) - Passenger Mode: Pickup Options -->
+        <!-- Switches: http://callmenick.com/post/css-toggle-switch-examples -->
+        <aside id="sliderTwo" class="passengerInfo2 halfWHlower whiteBG border slide-in">
+            <div class="topHalf">
+                <div class="switch">
+                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
+                    <label for="cmn-toggle-1"></label>
+                </div>
+                <h3 class="pickupSelect">Pickup Here</h3>
+            </div>
+            
+            <div class="bottomHalf">
+                <div class="switch">
+                    <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
+                    <label for="cmn-toggle-4"></label>
+                </div>
+                <h3 class="pickupSelect">Pickup Now</h3>
+            </div>
+        </aside>
+    </body>
+</html>
+
+<!-- Section 7 - References (Images) -->
+    <!-- References for images are given below -->
+
+    <!-- arrow: http://uxrepo.com/icon/up-right-by-weathercons  -->
+    <!-- car: http://www.freepik.com/free-photos-vectors/car-icon -->
+    <!-- cross: http://www.freepik.com/free-photos-vectors/car-icon -->
+    <!-- driver: http://pixhder.com/gallery/car+drivers+icon/30  -->
+    <!-- frown: http://www.freepik.com/free-vector/flat-and-round-vector-emotion-icons_777836.htm#term=sad%20face&page=1&position=1 -->
+    <!-- menuIcon: https://www.iconfinder.com/icons/134216/hamburger_lines_menu_icon -->
+    <!-- money: http://simpleicon.com/coin-money-6.html -->
+    <!-- passenger: http://pixhder.com/gallery/car+drivers+icon/32 -->
+    <!-- smile: http://www.freepik.com/free-vector/flat-and-round-vector-emotion-icons_777836.htm#term=sad%20face&page=1&position=1 -->
+    <!-- tick: http://www.pixempire.com/icon/tick-in-rounded-square-icon.html -->
+    <!-- headShotOne: http://www.speedeondata.com/aboutus/brian-rainey -->
+    <!-- headShotTwo: http://madphotoanddesign.com/2013/08/13/head-shots-mad-photo-design-le-mars-ia-portrait-photographer/  -->
+    <!-- headShotThree: http://www.studiodental.com/team/  -->
+    <!-- headShotFour: https://plus.google.com/100033222634608065791/posts -->
+    <!-- headShotFive: http://laurenbfalk.com/about/ -->
+    <!-- headShotSix: http://www.studiodental.com/team/ -->
