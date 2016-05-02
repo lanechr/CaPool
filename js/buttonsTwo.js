@@ -64,18 +64,22 @@ function hideTutorial()
     $("#tutorialBlur").hide();
 }
 
+function hideSearch()
+{
+    // Tutorial (HIDE)
+    $("#pac-input").toggle();
+}
+
 // Used help from the below site for the implementation of slide-in animations
 // http://stackoverflow.com/questions/16989585/css-slide-in-from-left-transition
 function slider()
 {
 var $drivers = document.getElementById('drivers');
-var $sliderTwo = document.getElementById('sliderTwo');
 var $toggle = document.getElementById('toggle');
 
 $toggle.addEventListener('click', function() {
     var isOpen = drivers.classList.contains('slide-in');
 
-    drivers.setAttribute('class', isOpen ? 'passengerInfo halfWH whiteBG border slide-out' : 'passengerInfo halfWH whiteBG border slide-in');
-    $sliderTwo.setAttribute('class', isOpen ? 'passengerInfo2 halfWHlower whiteBG border slide-out' : 'passengerInfo2 halfWHlower whiteBG border slide-in');
+    drivers.setAttribute('class', isOpen ? 'passengerInfo container whiteBG border slide-out' : 'passengerInfo container whiteBG border slide-in');
 });
 }

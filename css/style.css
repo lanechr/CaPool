@@ -55,8 +55,6 @@ h2{
 .rating h2{
     display: inline-block;
     vertical-align: middle;
-    margin-right: 25px;
-    margin-left: 5px;
 }
 h3{
     font-size: 1em;
@@ -74,6 +72,9 @@ p{
     background: black;
     color: white;
 }
+.driverList h1{
+    font-size: 2em;
+}
 /* - 3. Background Colour
 /*================================================*/
 .blueBG {
@@ -86,6 +87,14 @@ p{
 }
 /* - 4. Page Layout
 /*================================================*/
+.ratingsMiddle{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.ratings{
+    margin-top: 10px;
+    display: block;
+}
 #tutorial {
 	margin-top: 5%;
 }
@@ -135,9 +144,9 @@ p{
 }
 .marginPix{
     letter-spacing: normal;
-    margin-top: 50px;
+    margin-top: 15px;
 }
-.marginTop{margin-top: 50px;}
+.marginTop{margin-top: 15px;}
 .marginTop10{margin-top: 10px;}
 .imageSelect{
     height: 150px;
@@ -166,6 +175,9 @@ p{
     text-align: center;
     margin-top: 5%;
 }
+.selectionMargin{
+    margin-top: 100px;
+}
 /* - 4B. Media Queries
 /*================================================*/
 .container {
@@ -176,6 +188,7 @@ p{
     overflow: hidden;
 }
 @media (min-width:768px) {
+    .ratings{display: inline-block;}
 }
 
 @media (min-width:992px) {
@@ -416,22 +429,23 @@ input.cmn-toggle-round-flat:checked + label:after {
 /* - 10. Driver Information
 /*================================================*/
 .driverImage {
-    margin-top: 75px;
-    height: 200px;
+    margin-top: 15px;
+    height: 150px;
 }
 .ratingIcon {
     display: inline-block;
     vertical-align: middle;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
 }
 .ratingText {
-    height: 31px;
-    width: 35px;
+    height: 42px;
+    width: 50px;
     border-radius: 5px;
     color: white;
     font-style: normal;
-    padding-top: 4px;
+    padding-top: 8px;
+    font-size: 2em;
 }
 .yesNo {
     height: 50px;

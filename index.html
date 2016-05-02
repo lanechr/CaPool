@@ -77,10 +77,7 @@
         <div id="map"></div>
 		
         <!-- Section 5 (Aside) - Passenger Mode: Driver Information -->    
-        <aside id="drivers" class="passengerInfo halfWH whiteBG border slide-in">
-            <nav id="modeSelection">
-                <a href="index.html"><img src="images/passenger.png" alt="Passenger" class="mode"><h2 class="modeCaption">Passenger Mode</h2></a>
-            </nav>
+        <aside id="drivers" class="passengerInfo container whiteBG border slide-in">
             
             <section id="OneDriver" class="driverList">
                 <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
@@ -88,14 +85,20 @@
                 <h2>503 SWD</h2>
                 
                 <div id="ratingOne" class="marginTop rating">
-                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
-                    <h2 class="ratingText lightBlueBG">98</h2>
+                    <div class="ratings">
+                        <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                        <h2 class="ratingText lightBlueBG">98</h2>
+                    </div>
 
-                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
-                    <h2 class="ratingText orangeBG">5</h2>
+                    <div class="ratings ratingsMiddle">
+                        <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText orangeBG">5</h2>
+                    </div>
 
-                    <img src="images/car.png" alt="Frown" class="ratingIcon">
-                    <h2 class="ratingText blackBG">4</h2>
+                    <div class="ratings">
+                        <img src="images/car.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText blackBG">4</h2>
+                    </div>
                 </div>
             </section>
             <section id="TwoDriver" class="driverList">
@@ -104,14 +107,20 @@
                 <h2>225 DDJ</h2>
                 
                 <div id="ratingTwo" class="marginTop rating">
-                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
-                    <h2>10</h2>
+                    <div class="ratings">
+                        <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                        <h2 class="ratingText lightBlueBG">10</h2>
+                    </div>
 
-                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
-                    <h2>1</h2>
+                    <div class="ratings ratingsMiddle">
+                        <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText orangeBG">1</h2>
+                    </div>
 
-                    <img src="images/car.png" alt="Frown" class="ratingIcon">
-                    <h2>4</h2>
+                    <div class="ratings">
+                        <img src="images/car.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText blackBG">4</h2>
+                    </div>
                 </div>
             </section>
             <section id="ThreeDriver" class="driverList">
@@ -120,40 +129,26 @@
                 <h2>166 CMJ</h2>
                 
                 <div id="ratingThree" class="marginTop rating">
-                    <img src="images/smile.png" alt="Smile" class="ratingIcon">
-                    <h2>55</h2>
+                    <div class="ratings">
+                        <img src="images/smile.png" alt="Smile" class="ratingIcon">
+                        <h2 class="ratingText lightBlueBG">55</h2>
+                    </div>
 
-                    <img src="images/frown.png" alt="Frown" class="ratingIcon">
-                    <h2>17</h2>
+                    <div class="ratings ratingsMiddle">
+                        <img src="images/frown.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText orangeBG">17</h2>
+                    </div>
 
-                    <img src="images/car.png" alt="Frown" class="ratingIcon">
-                    <h2>1</h2>
+                    <div class="ratings">
+                        <img src="images/car.png" alt="Frown" class="ratingIcon">
+                        <h2 class="ratingText blackBG">1</h2>
+                    </div>
                 </div>
             </section>
             
-            <div class="marginTop">
+            <div class="selectionMargin">
                 <img src="images/tick.png" alt="Tick" class="yesNo" id="yes">
                 <img src="images/cross.png" alt="Cross" class="yesNo" id="no" onclick="driverList()">
-            </div>
-        </aside>
-        
-        <!-- Section 6 (Aside) - Passenger Mode: Pickup Options -->
-        <!-- Switches: http://callmenick.com/post/css-toggle-switch-examples -->
-        <aside id="sliderTwo" class="passengerInfo2 halfWHlower whiteBG border slide-in">
-            <div class="topHalf">
-                <div class="switch">
-                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
-                    <label for="cmn-toggle-1"></label>
-                </div>
-                <h3 class="pickupSelect">Pickup Here</h3>
-            </div>
-            
-            <div class="bottomHalf">
-                <div class="switch">
-                    <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
-                    <label for="cmn-toggle-4"></label>
-                </div>
-                <h3 class="pickupSelect">Pickup Now</h3>
             </div>
         </aside>
     </body>
