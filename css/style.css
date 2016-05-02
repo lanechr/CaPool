@@ -2,9 +2,11 @@
 /*================================================*/
 /*
     - 1.    Page Constants
-    - 2.    Fonts
+    - 2.    Fonts & Colours
     - 3.    Background Color
     - 4.    Page Layout
+        - 4A. Media Queries
+
     - 5.    Menu Button
     - 6.    Opening Overlay
         - 6A. Background Blur
@@ -30,7 +32,7 @@ body, html{
     right: 50px;
     top: 50px;
 }
-/* - 2. Fonts
+/* - 2. Fonts & Colours
 /*================================================*/
 #homeLogo h1{color: black;}
 #homeLogo h2{color: black;}
@@ -65,6 +67,12 @@ p{
     font-size: 1em; 
     font-weight: 300;
     color: grey;
+}
+.lightBlueBG{background: #40C0CD}
+.orangeBG{background: #F36023}
+.blackBG{
+    background: black;
+    color: white;
 }
 /* - 3. Background Colour
 /*================================================*/
@@ -158,6 +166,23 @@ p{
     text-align: center;
     margin-top: 5%;
 }
+/* - 4B. Media Queries
+/*================================================*/
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+@media (min-width:768px) {
+}
+
+@media (min-width:992px) {
+}
+
+@media (min-width:1200px) {
+}
 /* - 5. Menu Button
 /*================================================*/
 .menuIcon:hover {
@@ -188,7 +213,7 @@ p{
     margin-top:  15%;
     top: 0;
 }
-/* - 6.1. Background Blur
+/* - 6A. Background Blur
 /*================================================*/
 .blur{
     background: white;
@@ -398,6 +423,15 @@ input.cmn-toggle-round-flat:checked + label:after {
     display: inline-block;
     vertical-align: middle;
     width: 35px;
+    height: 35px;
+}
+.ratingText {
+    height: 31px;
+    width: 35px;
+    border-radius: 5px;
+    color: white;
+    font-style: normal;
+    padding-top: 4px;
 }
 .yesNo {
     height: 50px;
