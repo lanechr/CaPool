@@ -80,6 +80,7 @@ p{
 }
 /* - 4. Page Layout
 /*================================================*/
+.headerBar h1,h2:hover{cursor: pointer;}
 .ratingsMiddle{
     margin-left: 15px;
     margin-right: 15px;
@@ -89,7 +90,7 @@ p{
     display: block;
 }
 #tutorial {
-	margin-top: 5%;
+	margin-top: 150px;
 }
 .line {
     width: 87px;
@@ -143,6 +144,7 @@ p{
 .marginTop10{margin-top: 10px;}
 .imageSelect{
     height: 150px;
+    margin-top: 25px;
 }
 #openingOverlay .imageSelect:hover{
     cursor: pointer;
@@ -182,6 +184,8 @@ p{
 }
 @media (min-width:768px) {
     .ratings{display: inline-block;}
+    .selection{display: inline-block;}
+    #passenger{margin-left: 10%;}
 }
 
 @media (min-width:992px) {
@@ -506,3 +510,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+.marginTop75 {
+    margin-top: 150px;
+}

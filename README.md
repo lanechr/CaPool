@@ -1,4 +1,4 @@
 # CaPool
-An app that help students get around without high costs
+Shared Travel, Simplified
 
-This is a cheaper alternative to Uber, allowing students to crowd source a carpooling solution to their daily commute.
+CaPool is a cheaper alternative to Uber and taxis, as with Capool users set how much they are willing to pay. This allows CaPool to be feasible as a regular commuting option.
