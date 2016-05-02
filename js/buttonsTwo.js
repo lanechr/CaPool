@@ -30,6 +30,8 @@ $(document).ready(function(){
     $("#tutorialBlur").hide();
     // Logo (HIDE)
     $("header").hide();
+    // Header Bar (HIDE)
+    $(".headerBar").hide();
     
     // Opening Overaly (SHOW)
     $("#openingOverlay").show();
@@ -62,6 +64,8 @@ function hideTutorial()
     // Tutorial (HIDE)
     $("#tutorial").hide();
     $("#tutorialBlur").hide();
+    // Header Bar (SHOW)
+    $(".headerBar").show();
 }
 
 function hideSearch()

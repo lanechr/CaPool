@@ -16,6 +16,7 @@
     - 9.    Switches
     - 10.   Driver Information
     - 11.   Driving Mode
+    - 12.   Material Icons
 */
 
 /* - 1. Page Constants
@@ -26,16 +27,8 @@ body, html{
     font-family: 'Raleway', sans-serif;
     text-align: center;
 }
-#homeLogo{
-    position: absolute;
-    z-index: 200;
-    right: 50px;
-    top: 50px;
-}
 /* - 2. Fonts & Colours
 /*================================================*/
-#homeLogo h1{color: black;}
-#homeLogo h2{color: black;}
 h1, h2, h3{
     color: grey;
     font-weight: 300;
@@ -73,7 +66,7 @@ p{
     color: white;
 }
 .driverList h1{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 /* - 3. Background Colour
 /*================================================*/
@@ -132,7 +125,7 @@ p{
 .passengerInfo{
     z-index: 75;
     position: absolute;
-    top: 0;
+    top: 90px;
 }
 .passengerInfo2{
     z-index: 75;
@@ -199,22 +192,14 @@ p{
 /* - 5. Menu Button
 /*================================================*/
 .menuIcon:hover {
-    background: #ebebeb;
     cursor: pointer;
 }
 .menuIcon{
     height: 32px;
     position: absolute;
-	top: 10px;
-	right: 330px;
+	top: 21px;
+	left: 21px;
 	z-index: 120;
-    background: #fff;
-    border: 1px solid transparent;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* - 6. Opening Overlay
@@ -252,7 +237,10 @@ p{
 */
 /*================================================*/
 #map {
+    width: 100%;
     height: 100%;
+    top: 0;
+    bottom: 0;
     z-index: 1;
     position: relative;
 }
@@ -270,7 +258,7 @@ p{
     padding-left: 10px;
 }
 .controls {
-    margin-top: 10px;
+    margin-top: 100px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
     box-sizing: border-box;
@@ -282,14 +270,14 @@ p{
 #pac-input {
     background-color: #fff;
     font-family: Roboto;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     right: 25px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 300px;
+    width: 46%;
     position: absolute;
-    z-index: 99;
+    z-index: 101;
 }
 #pac-input:focus {
     border-color: #4d90fe;
@@ -430,7 +418,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 /*================================================*/
 .driverImage {
     margin-top: 15px;
-    height: 150px;
+    height: 125px;
 }
 .ratingIcon {
     display: inline-block;
@@ -484,3 +472,37 @@ input.cmn-toggle-round-flat:checked + label:after {
 #tutorialBlur{
     opacity: 0.7;
 }
+.headerBar {
+    position: absolute;
+    height: 75px;
+    padding-top: 15px;
+    width: 100%;
+    background: white;
+    z-index: 100;
+}
+.heading {
+    color: #40C0CD;
+    margin-top: 0;
+}
+.headerBar h1{font-size: 2em;}
+.headerBar h2{font-size: 1em;}
+
+.subtitle {
+    font-size: 1em;
+}
+/* - 12. Material Icons
+/*================================================*/
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
