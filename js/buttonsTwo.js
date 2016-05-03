@@ -33,6 +33,9 @@ $(document).ready(function(){
     // Header Bar (HIDE)
     $(".headerBar").hide();
     
+    //MAP RESIZE
+    $("#map").css("height", "100vh");
+    
     // Opening Overaly (SHOW)
     $("#openingOverlay").show();
     $("#openingBlur").show();
@@ -66,6 +69,9 @@ function hideTutorial()
     $("#tutorialBlur").hide();
     // Header Bar (SHOW)
     $(".headerBar").show();
+    
+    //MAP RESIZE
+    $("#map").css("height", "89vh")
 }
 
 function hideSearch()

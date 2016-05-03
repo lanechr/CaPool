@@ -33,14 +33,24 @@ $(document).ready(function initMap(){
     
     var passengerLocations = [locationOne, locationTwo, locationThree, locationFour, locationFive];
     
-    var directionsService = new google.maps.DirectionsService;
+    var directionsService = new 
+    google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: {lat: -27.495421, lng: 153.012470}
     });
     
+    // Create the DIV to hold the control and call the CenterControl()
+    // constructor passing in this DIV.
+    var centerControlDiv = document.createElement('div');
+    var centerControl = new CenterControl(centerControlDiv, map);
+
+    centerControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+    
     var markerChange = document.getElementById('no').addEventListener('click', markerFunction);
+    
     function createMarker() 
         {
             if (i == 5) {
@@ -62,13 +72,13 @@ $(document).ready(function initMap(){
                 i++;
             }
             else{
-                var marker = new google.maps.Marker({
-                position: passengerLocations[i],
-                map: map,
-                title: 'Passenger'
-                });
-                map.setCenter(passengerLocations[i]);
-                markers.push(marker);
+//                var marker = new google.maps.Marker({
+//                position: passengerLocations[i],
+//                map: map,
+//                title: 'Passenger'
+//                });
+//                map.setCenter(passengerLocations[i]);
+//                markers.push(marker);
 
                 var infowindow = new google.maps.InfoWindow({
                 content: contentString
@@ -115,6 +125,71 @@ $(document).ready(function initMap(){
     // If more than two locations are used in a row, directions don't respond, using 'test' always works.
     // Most likely due to the number of Google autocomplete's allowed without paying extra.
     var autocomplete = new google.maps.places.Autocomplete(input);
+    
+    function getPositionForCentre(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var coords = new google.maps.LatLng(latitude, longitude);
+    centreMapOnUser(latitude, longitude);
+    }
+
+    function centreMapOnUser(userLat, userLong) {
+        var userLat = userLat;
+        var userLong = userLong;
+        var coords = new google.maps.LatLng(userLat, userLong);
+        map.setCenter(coords);
+
+        var marker = new google.maps.Marker({
+                            position: coords,
+                            map: map,
+                            title: 'Pickup Location'
+                        });
+        //map.setCenter(userLoc, {zoom: 13, center: {lat: userLat, lng: userLong}});
+    }
+
+    function errorFunc() {
+
+    }
+
+    //Support with custom controls found at https://developers.google.com/maps/documentation/javascript/examples/control-custom
+
+    //Google Maps Centre Control
+    function CenterControl(controlDiv, map) {
+
+      // Set CSS for the control border.
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = '#fff';
+      controlUI.style.border = '2px solid #fff';
+      controlUI.style.borderRadius = '3px';
+      controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+      controlUI.style.cursor = 'pointer';
+      controlUI.style.marginBottom = '22px';
+      controlUI.style.textAlign = 'center';
+      controlUI.title = 'Click to recenter the map';
+      controlDiv.appendChild(controlUI);
+
+      // Set CSS for the control interior.
+      var controlText = document.createElement('div');
+      controlText.style.color = 'rgb(25,25,25)';
+      controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+      controlText.style.fontSize = '16px';
+      controlText.style.lineHeight = '38px';
+      controlText.style.paddingLeft = '5px';
+      controlText.style.paddingRight = '5px';
+      controlText.innerHTML = 'Where Am I?';
+      controlUI.appendChild(controlText);
+
+      // Setup the click event listeners: simply set the map to User.
+      controlUI.addEventListener('click', function() {
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(getPositionForCentre, errorFunc);
+            }
+            else{
+                alert("Your browser does not support Location Services!")
+            }
+      });
+
+    }
 });
     
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -146,3 +221,5 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         });
     }
 }
+
+

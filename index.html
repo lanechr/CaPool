@@ -10,25 +10,25 @@
 		<!-- Google Web Fonts & Icons -->
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- JavaScript -->
+        <!--Google Maps-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
+        </script>
+         <!-- JavaScript -->
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/mapTwo.js"></script>
         <script type="text/javascript" src="js/buttonsTwo.js"></script>
-        <!--Google Maps-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
-    </script>
 	</head>
 	<body>
         <!-- Section 1: Header -->
-        <header>
-            <div class="headerBar">
-                <a href="index.html">
-                    <h1 class="heading">CaPool</h1>
-                    <h2 class="heading">Shared Travel, Simplified</h2>
-                </a>
-            </div>
+        <header>        
+             <!-- Section 1A: Home Navigation -->
+            <nav id="homeLogo">
+                <a href="index.html"><h1>CaPool</h1></a>
+                <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+            </nav>
+            
             <!-- Section 1B: MenuButton -->
-            <i id="toggle" class="material-icons md-48 menuIcon">menu</i>
+            <img id="toggle" src="images/menuIcon.png" alt="Menu Button" class="menuIcon">
             
             <!-- Section 1C: Adress Input -->
             <input id="pac-input" class="controls" type="text" placeholder="Destination" onclick="hideTutorial()">
@@ -70,7 +70,7 @@
         <div id="openingBlur" class="blur fullWH"></div>
         
         <!-- Section 4: Google Maps -->
-        <div id="map"></div>
+        <div id="map" class="map passenger-map"></div>
 		
         <!-- Section 5 (Aside) - Passenger Mode: Driver Information -->    
         <aside id="drivers" class="passengerInfo container whiteBG border slide-in">

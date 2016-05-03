@@ -22,8 +22,9 @@
 /* - 1. Page Constants
 /*================================================*/
 body, html{
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    overflow: hidden;
     font-family: 'Raleway', sans-serif;
     text-align: center;
 }
@@ -80,6 +81,10 @@ p{
 }
 /* - 4. Page Layout
 /*================================================*/
+#homelogo{
+    height: 10vh;
+}
+
 .headerBar h1,h2:hover{cursor: pointer;}
 .ratingsMiddle{
     margin-left: 15px;
@@ -242,7 +247,7 @@ p{
 /*================================================*/
 #map {
     width: 100%;
-    height: 100%;
+    height: 89vh;
     top: 0;
     bottom: 0;
     z-index: 1;
