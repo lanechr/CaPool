@@ -10,16 +10,20 @@
 		<!-- Google Web Fonts & Icons -->
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Google Maps-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
-        </script>
-         <!-- JavaScript -->
+        <!-- jQuery -->
+        <link rel="stylesheet" href= "http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <!-- JavaScript -->
         <script type="text/javascript" src="js/mapTwo.js"></script>
         <script type="text/javascript" src="js/buttonsTwo.js"></script>
+        <!--Google Maps-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
+    </script>
 	</head>
 	<body>
         <!-- Section 1: Header -->
+
         <header>        
              <!-- Section 1A: Home Navigation -->
             <nav id="homeLogo">
@@ -29,9 +33,13 @@
             
             <!-- Section 1B: MenuButton -->
             <img id="toggle" src="images/menuIcon.png" alt="Menu Button" class="menuIcon">
+
+            <!-- Section 1B: MenuButtons -->
+            <i id="toggle" class="material-icons md-48 menuIcon icons">menu</i>
+            <i id="settingsToggle" class="material-icons md-48 settingsIcon icons" onclick="optionsMenu()">settings</i>
             
             <!-- Section 1C: Adress Input -->
-            <input id="pac-input" class="controls" type="text" placeholder="Destination" onclick="hideTutorial()">
+            <input id="pac-input" class="pac-input controls" type="text" placeholder="Destination" onclick="hideTutorial()">
         </header>
         
         <!-- Section 2: Tutorial Overlay -->
@@ -73,7 +81,7 @@
         <div id="map" class="map passenger-map"></div>
 		
         <!-- Section 5 (Aside) - Passenger Mode: Driver Information -->    
-        <aside id="drivers" class="passengerInfo container whiteBG border slide-in">
+        <aside id="drivers" class="passengerInfo container whiteBG slide-in">
             
             <section id="OneDriver" class="driverList">
                 <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
@@ -147,6 +155,28 @@
                 <img src="images/cross.png" alt="Cross" class="yesNo" id="no" onclick="driverList()">
             </div>
         </aside>
+        
+        <!-- Section 6 - Options Menu -->
+        <div class="optionsMenu container">
+            <div class="clock whiteBG">
+                <input type="text" id="datepicker" placeholder="Pickup Date">
+                <i id="clock" class="material-icons md-36 schedule">schedule</i>
+                <div class="switch schedule">
+                    <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" checked type="checkbox">
+                    <label for="cmn-toggle-4"></label>
+                </div>
+            </div>
+            
+            <div class="clock whiteBG marginTop">
+                <input id="end" class="pac-input controls" type="text" placeholder="Pickup Location">
+                <i id="pin" class="material-icons md-36 schedule">room</i>
+                <div class="switch schedule">
+                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                    <label for="cmn-toggle-1"></label>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>
 
