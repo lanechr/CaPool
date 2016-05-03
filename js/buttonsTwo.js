@@ -32,6 +32,8 @@ $(document).ready(function(){
     $("header").hide();
     // Header Bar (HIDE)
     $(".headerBar").hide();
+    // Options Menu (HIDE)
+    $(".optionsMenu").hide();
     
     // Opening Overaly (SHOW)
     $("#openingOverlay").show();
@@ -39,11 +41,38 @@ $(document).ready(function(){
     slider();
 });
 
+$(document).ready(function(){
+    $("#datepicker").hide();
+    $('#cmn-toggle-4').change(function(){
+        if(this.checked)
+            $('#datepicker').fadeOut();
+        else
+            $('#datepicker').fadeIn();
+    });
+});
+
+$(document).ready(function(){
+    $('#cmn-toggle-1').change(function(){
+        if(this.checked)
+            $('#end').fadeOut();
+        else
+            $('#end').fadeIn();
+    });
+});
+
+function optionsMenu(){
+    var optionsMenu = $(".optionsMenu");
+    if ($(".optionsMenu").is(":visible"))
+        $(".optionsMenu").hide();
+    else
+        $(".optionsMenu").show();
+}
+
 // Initialises Tutorial
 function passengerMode()
 {
     // Destination Input Area (SHOW)
-    $("#toggle").hide();
+    $(".icons").hide();
     $(".controls").show();
     // Tutorial (SHOW)
     $("#tutorial").show();
@@ -66,6 +95,13 @@ function hideTutorial()
     $("#tutorialBlur").hide();
     // Header Bar (SHOW)
     $(".headerBar").show();
+    $("#settingsToggle").show();
+    datePicker();
+}
+
+// https://jqueryui.com/datepicker/
+function datePicker() {
+    $("#datepicker").datepicker();
 }
 
 function hideSearch()
@@ -84,6 +120,6 @@ var $toggle = document.getElementById('toggle');
 $toggle.addEventListener('click', function() {
     var isOpen = drivers.classList.contains('slide-in');
 
-    drivers.setAttribute('class', isOpen ? 'passengerInfo container whiteBG border slide-out' : 'passengerInfo container whiteBG border slide-in');
+    drivers.setAttribute('class', isOpen ? 'passengerInfo container whiteBG slide-out' : 'passengerInfo container whiteBG slide-in');
 });
 }
