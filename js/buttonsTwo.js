@@ -16,27 +16,18 @@ function driverList()
 };
 
 $(document).ready(function(){
-    // Temporary driver changing
-    $(".driverList").hide();
-    $("#OneDriver").show();
-    // Destination Input Area (HIDE)
-    $("#toggle").hide();
-    $(".controls").hide();
     // Left Panel (HIDE)
     $(".passengerInfo").hide();
-    $("#sliderTwo").hide();
     // Tutorial (HIDE)
     $("#tutorial").hide();
     $("#tutorialBlur").hide();
-    // Logo (HIDE)
-    $("header").hide();
-    // Header Bar (HIDE)
-    $(".headerBar").hide();
+    // Header (HIDE)
+    $("#toggle").hide();
+    $("#settingsToggle").hide();
+    $("#homeLogo").hide();
+    $("#pac-input").hide();
     // Options Menu (HIDE)
     $(".optionsMenu").hide();
-    
-    //MAP RESIZE
-    $("#map").css("height", "100vh");
     
     // Opening Overaly (SHOW)
     $("#openingOverlay").show();
@@ -74,18 +65,10 @@ function optionsMenu(){
 // Initialises Tutorial
 function passengerMode()
 {
-    // Destination Input Area (SHOW)
-    $(".icons").hide();
-    $(".controls").show();
     // Tutorial (SHOW)
     $("#tutorial").show();
     $("#tutorialBlur").show();
-    // Left Panel (HIDE)
-    $(".passengerInfo").hide();
-    $("#sliderTwo").hide();
-    // Logo (SHOW)
-    $("header").show();
-    
+    $("#pac-input").show();
     // Opening Overaly (HIDE)
     $("#openingOverlay").hide();
     $("#openingBlur").hide();
@@ -96,24 +79,15 @@ function hideTutorial()
     // Tutorial (HIDE)
     $("#tutorial").hide();
     $("#tutorialBlur").hide();
-    // Header Bar (SHOW)
-    $(".headerBar").show();
-    
-    //MAP RESIZE
-    $("#map").css("height", "89vh");
+    // Header (SHOW)
     $("#settingsToggle").show();
+    $("#homeLogo").show();
     datePicker();
 }
 
 // https://jqueryui.com/datepicker/
 function datePicker() {
     $("#datepicker").datepicker();
-}
-
-function hideSearch()
-{
-    // Tutorial (HIDE)
-    $("#pac-input").toggle();
 }
 
 // Used help from the below site for the implementation of slide-in animations
