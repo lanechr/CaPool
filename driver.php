@@ -5,7 +5,9 @@
 		<title>CaPool: Driver Mode</title>
         <!-- StyleSheets -->
 		<link href="css/reset.css" rel="stylesheet" type="text/css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css"> 
+        <!--        Google Materialize style Sheet-->
+         <link rel="stylesheet" href="css/materialize.css">
 		<!--Online link to Google Web Fonts used, however extra font family is in CSS-->
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"

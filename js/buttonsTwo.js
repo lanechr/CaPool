@@ -30,8 +30,11 @@ $(document).ready(function(){
     $(".optionsMenu").hide();
     
     // Opening Overaly (SHOW)
-    $("#openingOverlay").show();
-    $("#openingBlur").show();
+//    $("#openingOverlay").hide();
+//    $("#openingBlur").hide();
+//    
+//    $('#loginOverlay').hide();
+//    $('#loginBlur').hide();
     slider();
 });
 
@@ -102,4 +105,22 @@ $toggle.addEventListener('click', function() {
 
     drivers.setAttribute('class', isOpen ? 'passengerInfo container whiteBG slide-out' : 'passengerInfo container whiteBG slide-in');
 });
+}
+
+function loggedIn() {
+
+    $('#loginOverlay').hide();
+    $('#loginBlur').hide();
+    
+    $("#openingOverlay").show();
+    $("#openingBlur").show();
+}
+
+function notLoggedIn() {
+
+    $('#loginOverlay').show();
+    $('#loginBlur').show();
+    
+    $("#openingOverlay").hide();
+    $("#openingBlur").hide();
 }

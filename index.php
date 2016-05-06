@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,6 +11,9 @@
         <!-- StyleSheets -->
 		<link href="css/reset.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/loginstyle.css" rel="stylesheet" type="text/css">
+<!--        Google Materialize style Sheet-->
+         <link rel="stylesheet" href="css/materialize.css">
 		<!-- Google Web Fonts & Icons -->
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -54,7 +61,45 @@
         </div>
         <div id="tutorialBlur" class="blur fullWH"></div>
         
-        <!-- Section 3: Opening Overlay -->
+        <!-- Section 3A: Login Overlay -->
+        <div id="loginOverlay" class="overlay">
+            <a href="index.php"><h1>CaPool</h1></a>
+            <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+            
+            
+            <form id="loginform" method="POST" action="loginaction.php">
+                
+                <?php 
+                if (isset($_SESSION['failed'])) {
+                    echo "<p class='group' style='color:red;'>Incorrect Username or Password</p><br>";
+                }
+                ?>
+    
+              <div class="group">      
+                <input class="logininput" name="username" size="20" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+              </div>
+
+              <div class="group">      
+                <input class="logininput" name="password" type="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+              </div>
+                <br>
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>   
+
+            </form>
+            
+        </div>
+        <div id="loginBlur" class="blur fullWH"></div>
+        
+        
+        <!-- Section 3B: Opening Overlay -->
         <div id="openingOverlay" class="overlay">
             <a href="index.php"><h1>CaPool</h1></a>
             <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
@@ -70,8 +115,20 @@
                     <h2>Passenger</h2>
                 </div>
             </nav>
+            <a href="logoutaction.php">Logout</a>
         </div>
         <div id="openingBlur" class="blur fullWH"></div>
+        
+        <!--Logic: Check whether user is logged in and show correct overlay-->
+        
+        <?php 
+        
+        if (isset($_SESSION['auth'])) {
+            echo '<script type="text/javascript">loggedIn();</script>';
+        }else{
+            echo '<script type="text/javascript">notLoggedIn();</script>';
+        }
+        ?>
         
         <!-- Section 4: Google Maps -->
         <div id="map" class="map passenger-map"></div>
