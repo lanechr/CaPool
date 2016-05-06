@@ -26,8 +26,8 @@
         <header>        
              <!-- Section 1A: Home Navigation -->
             <nav id="homeLogo" class="whiteBG">
-                <a href="index.html"><h1>CaPool</h1></a>
-                <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+                <a href="index.php"><h1>CaPool</h1></a>
+                <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
             </nav>
 
             <!-- Section 1B: MenuButtons -->
@@ -56,12 +56,12 @@
         
         <!-- Section 3: Opening Overlay -->
         <div id="openingOverlay" class="overlay">
-            <a href="index.html"><h1>CaPool</h1></a>
-            <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+            <a href="index.php"><h1>CaPool</h1></a>
+            <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
             
             <nav class="marginTop">
                 <div id="driver" class="selection">
-                    <a href="driver.html"><img src="images/driver.png" alt="Driver" class="imageSelect">
+                    <a href="driver.php"><img src="images/driver.png" alt="Driver" class="imageSelect">
                     <h2>Driver</h2></a>
                 </div>
             

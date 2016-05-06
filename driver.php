@@ -23,8 +23,8 @@
         <header>
             <!-- Section 1A: Home Navigation -->
             <nav id="homeLogo">
-                <a href="index.html"><h1>CaPool</h1></a>
-                <a href="index.html"><h2>Shared Travel, Simplified</h2></a>
+                <a href="index.php"><h1>CaPool</h1></a>
+                <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
             </nav>
             
             <!-- Section 1B: MenuButton -->
@@ -60,7 +60,7 @@
         <!-- Section 4 (Aside) - Driver Mode: Passenger Information -->
         <aside id="sliderOne" class="passengerInfo halfWH blueBG border slide-in">
             <nav id="modeSelection">
-                <a href="index.html"><img src="images/driver.png" alt="Driver" class="mode"><h2 class="modeCaption">Driver Mode</h2></a>
+                <a href="index.php"><img src="images/driver.png" alt="Driver" class="mode"><h2 class="modeCaption">Driver Mode</h2></a>
             </nav>
             
             <!-- List of Passenger to alternate through -->
