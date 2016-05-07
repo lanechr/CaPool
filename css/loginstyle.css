@@ -35,7 +35,7 @@ label          {
 input:focus ~ label, input:valid ~ label     {
   top:-20px;
   font-size:14px;
-  color:#5264AE;
+  color:#1B8E99;
 }
 
 /* BOTTOM BARS ================================= */
@@ -46,7 +46,7 @@ input:focus ~ label, input:valid ~ label     {
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#5264AE; 
+  background:#1B8E99; 
   transition:0.2s ease all; 
 }
 .bar:before {
@@ -79,6 +79,6 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @keyframes inputHighlighter {
-  from  { background:#5264AE; }
+  from  { background:#1B8E99; }
   to    { width:0; background:transparent; }
 }

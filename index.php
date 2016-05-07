@@ -89,8 +89,9 @@ session_start();
                 <label>Password</label>
               </div>
                 <br>
-              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
+              
+                <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
+                <i class="material-icons right inline">send</i>
               </button>   
 
             </form>
