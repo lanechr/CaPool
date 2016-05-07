@@ -91,8 +91,8 @@ session_start();
                 <br>
               
                 <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
-                <i class="material-icons right inline">send</i>
-              </button>   
+                    <i class="material-icons md-24 right inline">send</i>
+                </button>   
 
             </form>
             
@@ -116,8 +116,14 @@ session_start();
                     <h2>Passenger</h2>
                 </div>
             </nav>
-            <a href="logoutaction.php">Logout</a>
         </div>
+        
+            <form id="logoutform" method="POST" action="logoutaction.php">
+                <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Logout</p>
+                    <i class="material-icons md-24 right inline">account_circle</i>
+                </button>
+            </form>
+        
         <div id="openingBlur" class="blur fullWH"></div>
         
         <!--Logic: Check whether user is logged in and show correct overlay-->

@@ -85,6 +85,8 @@ function hideTutorial()
     // Header (SHOW)
     $("#settingsToggle").show();
     $("#homeLogo").show();
+    // Logout (HIDE)
+    $("#logoutform").hide();
     datePicker();
 }
 

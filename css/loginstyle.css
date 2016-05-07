@@ -82,3 +82,10 @@ input:focus ~ .highlight {
   from  { background:#1B8E99; }
   to    { width:0; background:transparent; }
 }
+
+#logoutform {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 200;
+}
