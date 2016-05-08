@@ -18,11 +18,11 @@ if ($link->connect_error) {
 } 
 
 if ($link) {
-    $droptable = "DROP DATABASE capool";
-    if ($link->query($droptable) === TRUE) {
+    $sql = "DROP DATABASE capool";
+    if (mysqli_query($link, $sql)) {
         echo "Database Deleted successfully <br>";
     } else {
-        echo "Error Deleting Database<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . mysqli_error($link);
     }
 }
 
@@ -30,10 +30,10 @@ $link->close();
 
 // Create database
 $sql = "CREATE DATABASE capool";
-if ($conn->query($sql) === TRUE) {
+if (mysqli_query($conn, $sql)) {
     echo "Database created successfully <br>";
 } else {
-    echo "Error creating database: " . $conn->error;
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 
@@ -54,12 +54,22 @@ password VARCHAR(30) NOT NULL,
 rating INT(1)
 )";
 
-if ($link->query($sql) === TRUE) {
-    echo "User table created successfully";
+if (mysqli_query($link, $sql)) {
+    echo "User table created successfully<br>";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error: " . $sql . "<br>" . mysqli_error($link);
 }
 
+// sql to testing user entry
+$sql = "INSERT INTO users (username, password, rating)
+VALUES ('user', 'password', 3)";
+
+
+if (mysqli_query($link, $sql)) {
+    echo "User entry created successfully<br>";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+}
 
 $link->close();
 $conn->close();
