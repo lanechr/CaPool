@@ -116,6 +116,8 @@ function loggedIn() {
     
     $("#openingOverlay").show();
     $("#openingBlur").show();
+    
+    $("#logoutform").show();
 }
 
 function notLoggedIn() {
@@ -125,4 +127,6 @@ function notLoggedIn() {
     
     $("#openingOverlay").hide();
     $("#openingBlur").hide();
+    
+    $("#logoutform").hide();
 }
