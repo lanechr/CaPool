@@ -29,6 +29,8 @@ $(document).ready(function(){
     // Options Menu (HIDE)
     $(".optionsMenu").hide();
     
+    $("#hiddenfacebookloginform").hide();
+    
     //Hide signup
 //    $("#signupOverlay").hide();
 //    $("#signupBlur").hide();
@@ -207,12 +209,24 @@ window.fbAsyncInit = function() {
             } else {
                 document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
             }
-        }, {scope: 'email' });
+        }, {scope: 'public_profile,email' });
+        facebookLogin();
     }
 
     function getInfo() {
         FB.api('/me', 'GET', {fields: 'first_name, last_name, name, id'}, function(response) {
-            document.getElementById('status').innerHTML = response.first_name + " you are logged in";
+            document.getElementById('status').innerHTML = response.id + " you are logged in";
+        });
+
+    }
+
+    function facebookLogin() {
+        FB.api('/me', 'GET', {fields: 'first_name, last_name, id'}, function(response) {
+            //login though facebook
+            $("#facebookidinput").val(response.id);
+            $("#facebookfnameinput").val(response.first_name);
+            $("#facebooklnameinput").val(response.last_name);
+            $("#hiddenfacebookloginform").submit();
         });
 
     }

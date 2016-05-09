@@ -316,6 +316,14 @@ session_start();
                 </div>
             </div>
         </div> 
+        
+        <form id="hiddenfacebookloginform" method="POST" action="facebookloginaction.php">
+            <input id="facebookidinput" class="hiddeninput" name="fbid" type="text" value="test">
+            <input id="facebookfnameinput" class="hiddeninput" name="fbfname" type="text" value="test">
+            <input id="facebooklnameinput" class="hiddeninput" name="fblname" type="text" value="test">
+
+        </form>
+        
     </body>
 </html>
 
