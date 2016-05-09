@@ -29,6 +29,7 @@ session_start();
     </script>
 	</head>
 	<body>
+
       
         <!-- Section 1: Header -->
         <header>        
@@ -106,7 +107,6 @@ session_start();
 
 
                <!--  Buttons for facebook login -->
-                <button class="btn waves-effect waves-light" onclick="getInfo()">Get Info</button>
                 <button class="btn waves-effect waves-light" onclick="login()" id= "login"> Login Via Facebook</button>
                 <br>
                 <br>
