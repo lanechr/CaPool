@@ -208,13 +208,22 @@ window.fbAsyncInit = function() {
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = response.first_name + ' are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
+                
+                FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email'}, function(response) {
+                    //login though facebook
+                    $("#facebookidinput").val(response.id);
+                    $("#facebookfnameinput").val(response.first_name);
+                    $("#facebooklnameinput").val(response.last_name);
+                    $("#facebookemailinput").val(response.email);
+                    $("#hiddenfacebookloginform").submit();
+                    });
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'You are not logged in.'
             } else {
                 document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
             }
         }, {scope: 'public_profile,email' });
-        facebookLogin(token);
+        
     }
 
     function getInfo() {
@@ -223,17 +232,3 @@ window.fbAsyncInit = function() {
         });
 
     }
-
-    function facebookLogin(token) {
-        FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email'}, function(response) {
-            //login though facebook
-            $("#facebookidinput").val(response.id);
-            $("#facebookfnameinput").val(response.first_name);
-            $("#facebooklnameinput").val(response.last_name);
-            $("#facebookemailinput").val(response.email);
-            $("#hiddenfacebookloginform").submit();
-        });
-
-    }
-
-            
