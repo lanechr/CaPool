@@ -2,6 +2,8 @@
 // Other ways to do this were known, but this method was more
 // efficient and succinct:
 // http://stackoverflow.com/questions/6003060/cycle-through-divs
+var token;
+
 function driverList()
 {
     var visiblePassenger = $('#drivers .driverList:visible');
@@ -202,6 +204,7 @@ window.fbAsyncInit = function() {
 
     function login () { 
         FB.login(function(response) {
+            token = response.authResponse.accessToken;
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = response.first_name + ' are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
@@ -211,7 +214,7 @@ window.fbAsyncInit = function() {
                 document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
             }
         }, {scope: 'public_profile,email' });
-        facebookLogin();
+        facebookLogin(token);
     }
 
     function getInfo() {
@@ -221,12 +224,13 @@ window.fbAsyncInit = function() {
 
     }
 
-    function facebookLogin() {
-        FB.api('/me', 'GET', {fields: 'first_name, last_name, id'}, function(response) {
+    function facebookLogin(token) {
+        FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email'}, function(response) {
             //login though facebook
             $("#facebookidinput").val(response.id);
             $("#facebookfnameinput").val(response.first_name);
             $("#facebooklnameinput").val(response.last_name);
+            $("#facebookemailinput").val(response.email);
             $("#hiddenfacebookloginform").submit();
         });
 

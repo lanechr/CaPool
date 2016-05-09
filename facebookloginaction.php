@@ -4,6 +4,7 @@ session_start();
 $fbid = $_REQUEST['fbid'];
 $fbfname = $_REQUEST['fbfname'];
 $fblname = $_REQUEST['fblname'];
+$fbemail = $_REQUEST['fbemail'];
 
 if (isset($_SESSION['fbloginfailed'])) {
 		unset($_SESSION['fbloginfailed']);
@@ -30,6 +31,8 @@ $fbfname = stripslashes($fbfname);
 $fbfname = mysqli_real_escape_string($link, $fbfname);
 $fblname = stripslashes($fblname);
 $fblname = mysqli_real_escape_string($link, $fblname);
+$fbemail = stripslashes($fbemail);
+$fbemail = mysqli_real_escape_string($link, $fbemail);
 
 $sql="SELECT * FROM users WHERE facebookid='$fbid'";
 
@@ -44,8 +47,8 @@ if (mysqli_num_rows($result) == 1) {
 		echo "Correct!";
 } else {
     //User not in database, create entry
-    $sql = "INSERT INTO users (facebookid, fname, lname)
-    VALUES ('$fbid', '$fbfname', '$fblname')";
+    $sql = "INSERT INTO users (email, facebookid, fname, lname)
+    VALUES ('$fbemail', '$fbid', '$fbfname', '$fblname')";
 
 
     if (mysqli_query($link, $sql)) {

@@ -159,6 +159,21 @@ session_start();
                 <label>Password</label>
               </div>
                 <br>
+                
+                <div class="group">      
+                <input class="signupinput" name="fname" size="20" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>First Name</label>
+              </div>
+
+              <div class="group">      
+                <input class="signupinput" name="lname" type="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Last Name</label>
+              </div>
+                <br>
               
                 <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
 <!--                    <i class="material-icons md-24 right inline">send</i>-->
@@ -329,6 +344,7 @@ session_start();
             <input id="facebookidinput" class="hiddeninput" name="fbid" type="text" value="test">
             <input id="facebookfnameinput" class="hiddeninput" name="fbfname" type="text" value="test">
             <input id="facebooklnameinput" class="hiddeninput" name="fblname" type="text" value="test">
+            <input id="facebookemailinput" class="hiddeninput" name="fbemail" type="text" value="test">
 
         </form>
         
