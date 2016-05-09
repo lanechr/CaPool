@@ -48,8 +48,12 @@ if ($email == "" || $password == ""){
 
         if (mysqli_query($link, $sql)) {
             echo "User entry created successfully<br>";
+            $_SESSION['auth'] = 1;
+	       header('location:index.php');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($link);
+            $_SESSION['signupfailedsqlerror'] = 1;
+            header('location:index.php');
         }
     }
 
