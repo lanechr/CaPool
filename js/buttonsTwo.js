@@ -29,6 +29,10 @@ $(document).ready(function(){
     // Options Menu (HIDE)
     $(".optionsMenu").hide();
     
+    //Hide signup
+//    $("#signupOverlay").hide();
+//    $("#signupBlur").hide();
+    
     // Opening Overaly (SHOW)
 //    $("#openingOverlay").hide();
 //    $("#openingBlur").hide();
@@ -118,6 +122,9 @@ function loggedIn() {
     $("#openingBlur").show();
     
     $("#logoutform").show();
+    
+    $("#signupOverlay").hide();
+    $("#signupBlur").hide();
 }
 
 function notLoggedIn() {
@@ -129,7 +136,39 @@ function notLoggedIn() {
     $("#openingBlur").hide();
     
     $("#logoutform").hide();
+    
+    $("#signupOverlay").hide();
+    $("#signupBlur").hide();
 }
+
+function showSignup() {
+
+    $('#loginOverlay').hide();
+    $('#loginBlur').hide();
+    
+    $("#openingOverlay").hide();
+    $("#openingBlur").hide();
+    
+    $("#logoutform").hide();
+    
+    $("#signupOverlay").show();
+    $("#signupBlur").show();
+}
+
+function showLogin() {
+
+    $('#loginOverlay').show();
+    $('#loginBlur').show();
+    
+    $("#openingOverlay").hide();
+    $("#openingBlur").hide();
+    
+    $("#logoutform").hide();
+    
+    $("#signupOverlay").hide();
+    $("#signupBlur").hide();
+}
+
 
 
 // initialise and setup facebook js sdk

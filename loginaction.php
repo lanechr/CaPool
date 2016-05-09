@@ -1,7 +1,7 @@
 <?php 
 //Session Details
 session_start();
-$email = $_REQUEST['username'];
+$email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
 
 

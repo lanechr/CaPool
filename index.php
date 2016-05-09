@@ -74,10 +74,13 @@ session_start();
                 if (isset($_SESSION['failed'])) {
                     echo "<p class='group' style='color:red;'>Incorrect Username or Password</p><br>";
                 }
+                if (isset($_SESSION['signupfaileduserexists'])) {
+                    echo "<p class='group' style='color:red;'>The email you used already exists, Log In.</p><br>";
+                }
                 ?>
     
               <div class="group">      
-                <input class="logininput" name="username" size="20" type="text" required>
+                <input class="logininput" name="email" size="20" type="text" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Username</label>
@@ -93,7 +96,11 @@ session_start();
               
                 <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
                     <i class="material-icons md-24 right inline">send</i>
-                </button>   
+                </button> 
+                </form>
+                <br>
+                <br>
+                <button class="btn waves-effect waves-light" onclick="showSignup()">Sign Up</button>
                 <br>
                 <br>
 
@@ -106,11 +113,60 @@ session_start();
                 <div id="status"></div>
               
 
-            </form>
+            
             
         </div>
         <div id="loginBlur" class="blur fullWH"></div>
         
+
+        <!-- Section 3A: Signup Overlay -->
+        <div id="signupOverlay" class="overlay">
+            <a href="index.php"><h1>CaPool</h1></a>
+            <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+            
+            
+            <form id="signupform" method="POST" action="signupaction.php">
+                
+                <?php 
+                if (isset($_SESSION['signupfailednoinput'])) {
+                    echo "<p class='group' style='color:red;'>Please enter your details.</p><br>";
+                }
+                if (isset($_SESSION['signupfailedsqlerror'])) {
+                    echo "<p class='group' style='color:red;'>An unknown error occured</p><br>";
+                }
+
+                ?>
+    
+              <div class="group">      
+                <input class="signupinput" name="email" size="20" type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+              </div>
+
+              <div class="group">      
+                <input class="signupinput" name="password" type="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+              </div>
+                <br>
+              
+                <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
+                    <i class="material-icons md-24 right inline">send</i>
+                </button>  
+                </form>
+                <br>
+                <br>
+                <button class="btn waves-effect waves-light" onclick="showLogin()">Log In</button>
+                
+
+            
+            
+        </div>
+        <div id="signupBlur" class="blur fullWH"></div>
+        
+
 
 
 
@@ -150,6 +206,13 @@ session_start();
         if (isset($_SESSION['auth'])) {
             echo '<script type="text/javascript">loggedIn();</script>';
         }else{
+            echo '<script type="text/javascript">notLoggedIn();</script>';
+        }
+        
+        if (isset($_SESSION['signupfailed'])) {
+            echo '<script type="text/javascript">showSignup();</script>';
+        }
+        if (isset($_SESSION['signupfaileduserexists'])) {
             echo '<script type="text/javascript">notLoggedIn();</script>';
         }
         ?>
