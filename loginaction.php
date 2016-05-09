@@ -1,7 +1,7 @@
 <?php 
 //Session Details
 session_start();
-$username = $_REQUEST['username'];
+$email = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
 
@@ -14,12 +14,12 @@ if ($link->connect_error) {
 } 
 
 // SQL Injection Protection
-$username = stripslashes($username);
+$email = stripslashes($email);
 $password = stripslashes($password);
-$username = mysqli_real_escape_string($link, $username);
+$email = mysqli_real_escape_string($link, $email);
 $password = mysqli_real_escape_string($link, $password);
 
-$sql="SELECT * FROM users WHERE username='$username' AND password='$password'";
+$sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
 
 $result=mysqli_query($link, $sql);
 
@@ -27,7 +27,6 @@ if (mysqli_num_rows($result) == 1) {
     if (isset($_SESSION['failed'])) {
 		unset($_SESSION['failed']);
 	}
-	$_SESSION['username'] = $username;
 	$_SESSION['auth'] = 1;
 	header('location:index.php');
 		echo "Correct!";

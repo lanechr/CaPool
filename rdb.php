@@ -49,8 +49,10 @@ if (!$link) {
 // sql to create table
 $sql = "CREATE TABLE users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-username VARCHAR(30) NOT NULL,
+email VARCHAR(30) NOT NULL,
 password VARCHAR(30) NOT NULL,
+fname VARCHAR(30) NOT NULL,
+lname VARCHAR(30) NOT NULL,
 rating INT(1)
 )";
 
@@ -61,8 +63,8 @@ if (mysqli_query($link, $sql)) {
 }
 
 // sql to testing user entry
-$sql = "INSERT INTO users (username, password, rating)
-VALUES ('user', 'password', 3)";
+$sql = "INSERT INTO users (email, password, fname, lname, rating)
+VALUES ('user@email.com', 'password', 'User', 'Name', 5)";
 
 
 if (mysqli_query($link, $sql)) {
