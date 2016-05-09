@@ -81,7 +81,15 @@ session_start();
                 ?>
     
               <div class="group">      
-                <input class="logininput" name="email" size="20" type="text" required>
+                <?php
+                  $inputvalue = "";
+                  if (isset($_SESSION['email'])) {
+		              $inputvalue = $_SESSION['email'];
+	               }
+                  
+                  
+                  echo '<input class="logininput" name="email" size="20" type="text" value="' . $inputvalue . '" required>';
+                ?>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Username</label>

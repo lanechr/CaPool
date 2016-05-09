@@ -3,6 +3,7 @@
 session_start();
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
+$_SESSION['email'] = $email;
 
 if (isset($_SESSION['fbloginfailed'])) {
 		unset($_SESSION['fbloginfailed']);
