@@ -14,6 +14,7 @@ if ($fbid == ""){
     //Facebook signin failed
     $_SESSION['fbloginfailed'] = 1;
     header('location:index.php');
+    exit;
 }
 
 //Connect to database
