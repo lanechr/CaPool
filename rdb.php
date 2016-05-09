@@ -14,7 +14,7 @@ $link = mysqli_connect("127.0.0.1", "root", "password", "capool");
 
 // Check connection
 if ($link->connect_error) {
-    die("CaPool table not found: " . $conn->connect_error);
+    die("CaPool table not found: " . $link->connect_error);
 } 
 
 if ($link) {
