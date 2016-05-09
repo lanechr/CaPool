@@ -4,6 +4,9 @@ session_start();
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
 
+if (isset($_SESSION['fbloginfailed'])) {
+		unset($_SESSION['fbloginfailed']);
+	}
 
 //Connect to database
 $link = mysqli_connect("127.0.0.1", "root", "password", "capool");

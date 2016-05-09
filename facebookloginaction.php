@@ -2,9 +2,18 @@
 //Session Details
 session_start();
 $fbid = $_REQUEST['fbid'];
-echo $fbid;
 $fbfname = $_REQUEST['fbfname'];
 $fblname = $_REQUEST['fblname'];
+
+if (isset($_SESSION['fbloginfailed'])) {
+		unset($_SESSION['fbloginfailed']);
+	}
+
+if ($fbid == ""){
+    //Facebook signin failed
+    $_SESSION['fbloginfailed'] = 1;
+    header('location:index.php');
+}
 
 //Connect to database
 $link = mysqli_connect("127.0.0.1", "root", "password", "capool");
@@ -34,10 +43,21 @@ if (mysqli_num_rows($result) == 1) {
 	header('location:index.php');
 		echo "Correct!";
 } else {
-    $_SESSION['fbid'] = $fbid;
-    $_SESSION['fbfname'] = $fbfname;
-    $_SESSION['fblname'] = $fblname;
-	header('location:facebooksignupaction.php');
+    //User not in database, create entry
+    $sql = "INSERT INTO users (facebookid, fname, lname)
+    VALUES ('$fbid', '$fbfname', '$fblname')";
+
+
+    if (mysqli_query($link, $sql)) {
+        echo "User entry created successfully<br>";
+        $_SESSION['auth'] = 1;
+
+       header('location:index.php');
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        $_SESSION['signupfailedsqlerror'] = 1;
+        header('location:index.php');
+    }
 }
 
 $link->close();

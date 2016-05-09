@@ -30,6 +30,7 @@ $(document).ready(function(){
     $(".optionsMenu").hide();
     
     $("#hiddenfacebookloginform").hide();
+    $("#status").hide();
     
     //Hide signup
 //    $("#signupOverlay").hide();
