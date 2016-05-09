@@ -6,6 +6,8 @@ $password = $_REQUEST['password'];
 $fname = $_REQUEST['fname'];
 $lname = $_REQUEST['lname'];
 
+$_SESSION['email'] = $email;
+
 if (isset($_SESSION['signupfailed'])) {
     unset($_SESSION['signupfailed']);
 }

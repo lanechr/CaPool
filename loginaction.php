@@ -9,6 +9,10 @@ if (isset($_SESSION['fbloginfailed'])) {
 		unset($_SESSION['fbloginfailed']);
 	}
 
+if (isset($_SESSION['signupfaileduserexists'])) {
+		unset($_SESSION['signupfaileduserexists']);
+	}
+
 //Connect to database
 $link = mysqli_connect("127.0.0.1", "root", "password", "capool");
 
