@@ -3,9 +3,11 @@
 session_start();
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
+$fname = $_REQUEST['fname'];
+$lname = $_REQUEST['lname'];
 
 if (isset($_SESSION['signupfailed'])) {
-		unset($_SESSION['signupfailed']);
+    unset($_SESSION['signupfailed']);
 }
 
 if (isset($_SESSION['signupfailednoinput'])) {
@@ -20,7 +22,7 @@ if (isset($_SESSION['signupfaileduserexists'])) {
     unset($_SESSION['signupfaileduserexists']);
 }
 
-if ($email == "" || $password == ""){
+if ($email == "" || $password == "" || $fname == "" || $lname == ""){
     $_SESSION['signupfailednoinput'] = 1;
     $_SESSION['signupfailed'] = 1;
     header('location:index.php');
@@ -37,8 +39,12 @@ if ($email == "" || $password == ""){
     // SQL Injection Protection
     $email = stripslashes($email);
     $password = stripslashes($password);
+    $fname = stripslashes($fname);
+    $lname = stripslashes($lname);
     $email = mysqli_real_escape_string($link, $email);
     $password = mysqli_real_escape_string($link, $password);
+    $fname = mysqli_real_escape_string($link, $fname);
+    $lname = mysqli_real_escape_string($link, $lname);
 
     $sql="SELECT * FROM users WHERE email='$email'";
 
@@ -53,8 +59,8 @@ if ($email == "" || $password == ""){
 
         //User Doesn't Exist (Proceed)
         // Query
-        $sql = "INSERT INTO users (email, password)
-        VALUES ('$email', '$password')";
+        $sql = "INSERT INTO users (email, password, fname, lname)
+        VALUES ('$email', '$password', '$fname', '$lname')";
 
 
         if (mysqli_query($link, $sql)) {
