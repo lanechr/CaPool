@@ -29,6 +29,7 @@ session_start();
     </script>
 	</head>
 	<body>
+      
         <!-- Section 1: Header -->
         <header>        
              <!-- Section 1A: Home Navigation -->
@@ -93,13 +94,26 @@ session_start();
                 <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Submit</p>
                     <i class="material-icons md-24 right inline">send</i>
                 </button>   
+                <br>
+                <br>
+
+
+               <!--  Buttons for facebook login -->
+                <button class="btn waves-effect waves-light" onclick="getInfo()">Get Info</button>
+                <button class="btn waves-effect waves-light" onclick="login()" id= "login"> Login Via Facebook</button>
+                <br>
+                <br>
+                <div id="status"></div>
+              
 
             </form>
             
         </div>
         <div id="loginBlur" class="blur fullWH"></div>
         
-        
+
+
+
         <!-- Section 3B: Opening Overlay -->
         <div id="openingOverlay" class="overlay">
             <a href="index.php"><h1>CaPool</h1></a>
@@ -125,6 +139,9 @@ session_start();
             </form>
         
         <div id="openingBlur" class="blur fullWH"></div>
+
+
+
         
         <!--Logic: Check whether user is logged in and show correct overlay-->
         
@@ -235,7 +252,7 @@ session_start();
                     <label for="cmn-toggle-1"></label>
                 </div>
             </div>
-        </div>   
+        </div> 
     </body>
 </html>
 
