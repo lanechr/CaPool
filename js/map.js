@@ -19,6 +19,10 @@ function passengerList()
     return false;
 };
 
+window.setInterval(function(){
+  updateUserLocation();
+}, 5000);
+
 $(document).ready(function initMap(){
     var markers = [];
     var i = 0;
@@ -223,4 +227,41 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
 }
 
+
+function updateUserLocation(){
+        navigator.geolocation.getCurrentPosition(getUserLocation, errorFunc1);
+    }    
+    
+    function getUserLocation(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    insertUserLocation(latitude, longitude);    
+}
+        
+    function insertUserLocation(latitude, longitude){
+        //alert(latitude);
+        $.post( "userlocation.php", { lat: latitude, long: longitude } );       
+};
+    
+
+function errorFunc1(error) {
+    switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      //alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      //alert("Location information is unavailable.")
+      break;
+    case error.TIMEOUT:
+      //alert("The request to get user location timed out.")
+      break;
+      case error.POSITION_ERROR:
+      //alert("The request to get user location timed out.")
+      break;
+    case error.UNKNOWN_ERROR:
+      //alert("An unknown error occurred.")
+      break;
+    }
+}
 
