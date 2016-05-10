@@ -54,7 +54,8 @@ password VARCHAR(30) NOT NULL,
 facebookid VARCHAR(30) NOT NULL,
 fname VARCHAR(30) NOT NULL,
 lname VARCHAR(30) NOT NULL,
-rating INT(1)
+rating INT(1),
+responses INT(6)
 )";
 
 if (mysqli_query($link, $sql)) {
@@ -64,8 +65,8 @@ if (mysqli_query($link, $sql)) {
 }
 
 // sql to testing user entry
-$sql = "INSERT INTO users (email, password, fname, lname, rating)
-VALUES ('user@email.com', 'password', 'User', 'Name', 5)";
+$sql = "INSERT INTO users (email, password, fname, lname, rating, responses)
+VALUES ('user@email.com', 'password', 'User', 'Name', 5, 100)";
 
 
 if (mysqli_query($link, $sql)) {
