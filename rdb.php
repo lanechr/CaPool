@@ -49,7 +49,7 @@ if (!$link) {
 // sql to create table
 $sql = "CREATE TABLE users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-email VARCHAR(30) NOT NULL,
+email VARCHAR(30) NOT NULL UNIQUE,
 password VARCHAR(30) NOT NULL,
 facebookid VARCHAR(30) NOT NULL,
 fname VARCHAR(30) NOT NULL,
@@ -73,6 +73,27 @@ if (mysqli_query($link, $sql)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
 }
+
+$sql = "CREATE TABLE userlocation (
+id INT(6) UNSIGNED PRIMARY KEY, 
+latitude VARCHAR(30),
+longitude VARCHAR(30),
+FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+)";
+
+if (mysqli_query($link, $sql)) {
+    echo "Location table created successfully<br>";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+}
+
+//$sql = "ALTER TABLE userlocation DROP FOREIGN KEY userlocation_ibfk_1;ALTER TABLE `userlocation` ADD CONSTRAINT `userlocation_ibfk_1` FOREIGN KEY (`id`) REFERENCES `capool`.`users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;";
+//
+//if (mysqli_query($link, $sql)) {
+//    echo "Table link created successfully<br>";
+//} else {
+//    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+//}
 
 $link->close();
 $conn->close();
