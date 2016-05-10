@@ -25,7 +25,7 @@ $sql="SELECT id FROM userlocation WHERE id='$userid'";
     $result=mysqli_query($link, $sql);
 
     if (mysqli_num_rows($result) == 1) {
-        $sql = "UPDATE userlocation SET latitude='$latitude', longitude='$latitude' WHERE id='$userid'";
+        $sql = "UPDATE userlocation SET latitude='$latitude', longitude='$longitude' WHERE id='$userid'";
 
         mysqli_query($link, $sql);
         
