@@ -206,7 +206,7 @@ window.fbAsyncInit = function() {
         FB.login(function(response) {
             token = response.authResponse.accessToken;
             if (response.status === 'connected') {
-                document.getElementById('status').innerHTML = response.first_name + ' are connected.';
+                document.getElementById('status').innerHTML = 'You are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
                 
                 FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email'}, function(response) {
