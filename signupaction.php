@@ -48,7 +48,7 @@ if ($email == "" || $password == "" || $fname == "" || $lname == ""){
     $fname = mysqli_real_escape_string($link, $fname);
     $lname = mysqli_real_escape_string($link, $lname);
 
-    $sql="SELECT * FROM users WHERE email='$email'";
+    $sql="SELECT id FROM users WHERE email='$email'";
 
     $result=mysqli_query($link, $sql);
 
@@ -68,6 +68,13 @@ if ($email == "" || $password == "" || $fname == "" || $lname == ""){
         if (mysqli_query($link, $sql)) {
             echo "User entry created successfully<br>";
             $_SESSION['auth'] = 1;
+            
+            $sql="SELECT id FROM users WHERE email='$email'";
+            $result=mysqli_query($link, $sql);
+            $id=array();
+            while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
+            mysqli_free_result($result);
+            $_SESSION['userID'] = $id[0];
             
 	       header('location:index.php');
         } else {

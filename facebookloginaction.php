@@ -35,7 +35,7 @@ $fblname = mysqli_real_escape_string($link, $fblname);
 $fbemail = stripslashes($fbemail);
 $fbemail = mysqli_real_escape_string($link, $fbemail);
 
-$sql="SELECT * FROM users WHERE facebookid='$fbid'";
+$sql="SELECT id FROM users WHERE facebookid='$fbid'";
 
 $result=mysqli_query($link, $sql);
 
@@ -44,6 +44,10 @@ if (mysqli_num_rows($result) == 1) {
 		unset($_SESSION['failed']);
 	}
 	$_SESSION['auth'] = 1;
+    $id=array();
+    while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
+    mysqli_free_result($result);
+    $_SESSION['userID'] = $id[0];
 	header('location:index.php');
 		echo "Correct!";
 } else {
@@ -55,6 +59,12 @@ if (mysqli_num_rows($result) == 1) {
     if (mysqli_query($link, $sql)) {
         echo "User entry created successfully<br>";
         $_SESSION['auth'] = 1;
+        $sql="SELECT id FROM users WHERE facebookid='$fbid'";
+        $result=mysqli_query($link, $sql);
+        $id=array();
+        while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
+        mysqli_free_result($result);
+        $_SESSION['userID'] = $id[0];
 
        header('location:index.php');
     } else {

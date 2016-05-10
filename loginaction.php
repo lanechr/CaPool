@@ -27,7 +27,7 @@ $password = stripslashes($password);
 $email = mysqli_real_escape_string($link, $email);
 $password = mysqli_real_escape_string($link, $password);
 
-$sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+$sql="SELECT id FROM users WHERE email='$email' AND password='$password'";
 
 $result=mysqli_query($link, $sql);
 
@@ -36,6 +36,10 @@ if (mysqli_num_rows($result) == 1) {
 		unset($_SESSION['failed']);
 	}
 	$_SESSION['auth'] = 1;
+    $id=array();
+    while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
+    mysqli_free_result($result);
+    $_SESSION['userID'] = $id[0];
 	header('location:index.php');
 		echo "Correct!";
 } else {
