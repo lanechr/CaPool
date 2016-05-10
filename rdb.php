@@ -77,8 +77,7 @@ if (mysqli_query($link, $sql)) {
 $sql = "CREATE TABLE userlocation (
 id INT(6) UNSIGNED PRIMARY KEY, 
 latitude VARCHAR(30),
-longitude VARCHAR(30),
-FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+longitude VARCHAR(30)
 )";
 
 if (mysqli_query($link, $sql)) {
