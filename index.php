@@ -168,7 +168,7 @@ session_start();
               </div>
 
               <div class="group">      
-                <input class="signupinput" name="lname" type="password" required>
+                <input class="signupinput" name="lname" type="text" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Last Name</label>
