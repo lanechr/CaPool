@@ -247,6 +247,11 @@ p{
 	z-index: 120;
     max-height: 70px;
 }
+#logo{
+    width: 250px;
+    height: 75px;
+    margin: auto;
+}
 
 /* - 6. Opening Overlay
 /*================================================*/

@@ -35,8 +35,10 @@ session_start();
         <header>        
              <!-- Section 1A: Home Navigation -->
             <nav id="homeLogo" class="whiteBG">
-                <a href="index.php"><h1>CaPool</h1></a>
-                <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+                <div id="logo">
+                    <a href="index.php"><h1>CaPool</h1></a>
+                    <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+                </div>
             </nav>
 
             <!-- Section 1B: MenuButtons -->
