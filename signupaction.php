@@ -31,12 +31,15 @@ if ($email == "" || $password == "" || $fname == "" || $lname == ""){
 }else{
 
     //Connect to database
-    $link = mysqli_connect("127.0.0.1", "root", "password", "capool");
+    $db="capool";
+$host="au-cdbr-azure-east-a.cloudapp.net";
+$dbuser="b549e4b6d7c04e";
+$pw="2db4dbdd";
 
-    // Check connection
-    if ($link->connect_error) {
-        die("CaPool table not found: " . $link->connect_error);
-    } 
+$link = new mysqli($host, $dbuser, $pw, $db);
+if ($link->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
+}
 
     // SQL Injection Protection
     $email = stripslashes($email);
@@ -58,7 +61,7 @@ if ($email == "" || $password == "" || $fname == "" || $lname == ""){
         header('location:index.php');
         echo "User Already Exists!";
     } else {
-
+        
         //User Doesn't Exist (Proceed)
         // Query
         $sql = "INSERT INTO users (email, password, fname, lname)

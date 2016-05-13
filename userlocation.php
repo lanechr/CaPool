@@ -6,12 +6,16 @@ $longitude = $_REQUEST['long'];
 $userid = $_SESSION['userID'];
 
 //Connect to database
-$link = mysqli_connect("127.0.0.1", "root", "password", "capool");
+$db="capool";
+$host="au-cdbr-azure-east-a.cloudapp.net";
+$dbuser="b549e4b6d7c04e";
+$pw="2db4dbdd";
 
-// Check connection
-if ($link->connect_error) {
-    die("CaPool table not found: " . $link->connect_error);
-} 
+//Connect to database
+$link = new mysqli($host, $dbuser, $pw, $db);
+if ($link->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
+}
 
 // SQL Injection Protection
 $latitude = stripslashes($latitude);
@@ -33,7 +37,9 @@ $sql="SELECT id FROM userlocation WHERE id='$userid'";
         $sql = "INSERT INTO userlocation (id, latitude, longitude)
             VALUES ($userid, '$latitude', '$longitude')";
 
-        mysqli_query($link, $sql);
+        if (!($stmt = $link->query($sql))) {
+    echo "Query failed: (" . $link->errno . ") " . $link->error;
+}
     }
 
    

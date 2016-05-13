@@ -17,13 +17,15 @@ if ($fbid == ""){
     exit;
 }
 
-//Connect to database
-$link = mysqli_connect("127.0.0.1", "root", "password", "capool");
+$db="capool";
+$host="au-cdbr-azure-east-a.cloudapp.net";
+$dbuser="b549e4b6d7c04e";
+$pw="2db4dbdd";
 
-// Check connection
-if ($link->connect_error) {
-    die("CaPool table not found: " . $link->connect_error);
-} 
+$link = new mysqli($host, $dbuser, $pw, $db);
+if ($link->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
+}
 
 // SQL Injection Protection
 $fbid = stripslashes($fbid);
@@ -55,8 +57,13 @@ if (mysqli_num_rows($result) == 1) {
     $sql = "INSERT INTO users (email, facebookid, fname, lname)
     VALUES ('$fbemail', '$fbid', '$fbfname', '$fblname')";
 
-
-    if (mysqli_query($link, $sql)) {
+    if (!($stmt = $link->query($sql))) {
+        echo "Query failed: (" . $link->errno . ") " . $link->error;
+         echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        $_SESSION['signupfailedsqlerror'] = 1;
+        header('location:index.php');
+        
+    }else{
         echo "User entry created successfully<br>";
         $_SESSION['auth'] = 1;
         $sql="SELECT id FROM users WHERE facebookid='$fbid'";
@@ -67,10 +74,6 @@ if (mysqli_num_rows($result) == 1) {
         $_SESSION['userID'] = $id[0];
 
        header('location:index.php');
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($link);
-        $_SESSION['signupfailedsqlerror'] = 1;
-        header('location:index.php');
     }
 }
 
