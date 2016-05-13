@@ -607,14 +607,15 @@ input.cmn-toggle-round-flat:checked + label:after {
 /*================================================*/
 /* Parts of this snippet were found at https://scotch.io/tutorials/google-material-design-input-boxes-in-css3 */
 
- 
 .buttonSubmit {
     margin-top: 1px;
     color: white;
     vertical-align: top;
     display: inline-block;
 }
-
 .inline {
     display: inline-block;
+}
+#login {
+    background-color: #3b5998;
 }
