@@ -1,0 +1,6 @@
+Database Info
+
+$db="capool";
+$host="au-cdbr-azure-east-a.cloudapp.net";
+$dbuser="b549e4b6d7c04e";
+$pw="2db4dbdd";
