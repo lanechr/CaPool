@@ -7,6 +7,7 @@ session_start();
 	<head>
 		<meta charset="utf-8" />
         <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
 		<title>CaPool</title>
         <!-- StyleSheets -->
 		<link href="css/reset.css" rel="stylesheet" type="text/css">
