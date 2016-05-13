@@ -28,20 +28,20 @@ session_start();
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqSfE33soawqnehyoiU2Egmld9q3d_PbM&&libraries=places">
         </script>
         <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="57x57" src="images/faviconIcons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" src="images/faviconIcons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" src="images/faviconIcons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" src="images/faviconIcons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" src="images/faviconIcons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" src="images/faviconIcons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" src="images/faviconIcons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" src="images/faviconIcons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" src="images/faviconIcons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  src="images/faviconIcons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" src="images/faviconIcons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" src="images/faviconIcons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" src="images/faviconIcons/favicon-16x16.png">
-        <link rel="manifest" src="images/faviconIcons/manifest.json">
+        <link rel="apple-touch-icon" sizes="57x57" href="images/faviconIcons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/faviconIcons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/faviconIcons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/faviconIcons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/faviconIcons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/faviconIcons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/faviconIcons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/faviconIcons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/faviconIcons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/faviconIcons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/faviconIcons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/faviconIcons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/faviconIcons/favicon-16x16.png">
+        <link rel="manifest" href="images/faviconIcons/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/faviconIcons/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
