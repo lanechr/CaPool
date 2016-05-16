@@ -59,10 +59,27 @@ if (mysqli_num_rows($result) == 1) {
     VALUES ('$fbemail', '$fbid', '$fbfname', '$fblname')";
 
     if (!($stmt = $link->query($sql))) {
-        echo "Query failed: (" . $link->errno . ") " . $link->error;
-         echo "Error: " . $sql . "<br>" . mysqli_error($link);
-        $_SESSION['signupfailedsqlerror'] = 1;
-        header('location:index.php');
+        $sql="SELECT id FROM users WHERE email='$fbemail'";
+        $result=mysqli_query($link, $sql);
+        if (mysqli_num_rows($result) == 1) {
+        $sql="UPDATE users SET facebookid='$fbid', fname='$fbfname', lname='$fblname' WHERE email='$fbemail'";
+        if (!($stmt = $link->query($sql))) {
+           echo "Query failed: (" . $link->errno . ") " . $link->error;
+             echo "Error: " . $sql . "<br>" . mysqli_error($link);
+            $_SESSION['signupfailedsqlerror'] = 1;
+            header('location:index.php'); 
+        } else {
+            echo "User entry updated successfully<br>";
+            $_SESSION['auth'] = 1;
+            $sql="SELECT id FROM users WHERE facebookid='$fbid'";
+            $result=mysqli_query($link, $sql);
+            $id=array();
+            while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
+            mysqli_free_result($result);
+            $_SESSION['userID'] = $id[0];
+            $_SESSION['FBID'] = $fbid;
+           header('location:index.php');
+        }
         
     }else{
         echo "User entry created successfully<br>";
