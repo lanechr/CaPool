@@ -34,6 +34,7 @@ $(document).ready(function(){
     $("#hiddenfacebookloginform").hide();
     $("#status").hide();
     
+    insertUserProfilePic();
     //Hide signup
 //    $("#signupOverlay").hide();
 //    $("#signupBlur").hide();
