@@ -60,7 +60,7 @@ session_start();
                     <?php 
                         if (isset($_SESSION['FBID'])) {
                             $pictureID = $_SESSION['FBID'];
-		                  echo "<div id='loggedInUserFBImg' style='background-image: url(\"http://graph.facebook.com/" . pictureID ."/picture?type=large\")'></div>";
+		                  echo "<div id='loggedInUserFBImg' style='background-image: url(\"http://graph.facebook.com/" . pictureID ."/picture?type=large\")'>" . pictureID ."</div>";
                         }
                     ?>
                     <div id="loggedInUserFBImg"></div>
