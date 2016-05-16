@@ -103,14 +103,13 @@ function centreMapOnUser(userLat, userLong) {
 //        zoom: 13, 
 //        center: {lat: userLat, lng: userLong
 //                }});
-    map.setCenter(coords);
+    map.panTo(coords);
     
-    var marker = new google.maps.Marker({
-                        position: coords,
-                        map: map,
-                        title: 'Pickup Location'
-                    });
-    //map.setCenter(userLoc, {zoom: 13, center: {lat: userLat, lng: userLong}});
+//    var marker = new google.maps.Marker({
+//                        position: coords,
+//                        map: map,
+//                        title: 'Pickup Location'
+//                    });
 }
 
 function errorFunc(error) {

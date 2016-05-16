@@ -141,14 +141,14 @@ $(document).ready(function initMap(){
         var userLat = userLat;
         var userLong = userLong;
         var coords = new google.maps.LatLng(userLat, userLong);
-        map.setCenter(coords);
+        map.panTo(coords);
 
-        var marker = new google.maps.Marker({
-                            position: coords,
-                            map: map,
-                            title: 'Pickup Location'
-                        });
-        //map.setCenter(userLoc, {zoom: 13, center: {lat: userLat, lng: userLong}});
+//        var marker = new google.maps.Marker({
+//                            position: coords,
+//                            map: map,
+//                            title: 'Pickup Location'
+//                        });
+        
     }
 
     function errorFunc() {
