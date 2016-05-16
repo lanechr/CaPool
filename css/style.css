@@ -631,3 +631,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 50%;
     background-size: 100% 100%;
 }
+
+.driver-map {
+    bottom:0;
+}

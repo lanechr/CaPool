@@ -22,18 +22,22 @@
 	</head>
 	<body>
         <!-- Section 1: Header -->
-        <header>
-            <!-- Section 1A: Home Navigation -->
-            <nav id="homeLogo">
-                <a href="index.php"><h1>CaPool</h1></a>
-                <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+         <header>        
+             <!-- Section 1A: Home Navigation -->
+            <nav id="homeLogo" class="whiteBG">
+                <div id="logo">
+                    <a href="index.php"><h1>CaPool</h1></a>
+                    <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
+                    <div id="loggedInUserFBImg"></div>
+                </div>
             </nav>
-            
-            <!-- Section 1B: MenuButton -->
-            <img id="toggle" src="images/menuIcon.png" alt="Menu Button" class="menuIcon">
+
+            <!-- Section 1B: MenuButtons -->
+            <i id="toggle" class="material-icons md-48 menuIcon icons">menu</i>
+<!--            <i id="settingsToggle" class="material-icons md-48 settingsIcon icons" onclick="optionsMenu()">settings</i>-->
             
             <!-- Section 1C: Adress Input -->
-            <input id="pac-input" class="controls" type="text" placeholder="Destination" onclick="hideTutorial()">
+            <input id="pac-input" class="pac-input controls" type="text" placeholder="Destination" onclick="hideTutorial()">
         </header>
         
         <!-- Section 2: Tutorial Overlay -->
