@@ -622,7 +622,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #loggedInUserFBImg {
     position: fixed;
-    right: 75px;;
+    right: 10px;;
     top: 10px;
     max-height: 70px;
     height: 70px;

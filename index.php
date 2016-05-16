@@ -64,7 +64,7 @@ session_start();
 
             <!-- Section 1B: MenuButtons -->
             <i id="toggle" class="material-icons md-48 menuIcon icons">menu</i>
-            <i id="settingsToggle" class="material-icons md-48 settingsIcon icons" onclick="optionsMenu()">settings</i>
+<!--            <i id="settingsToggle" class="material-icons md-48 settingsIcon icons" onclick="optionsMenu()">settings</i>-->
             
             <!-- Section 1C: Adress Input -->
             <input id="pac-input" class="pac-input controls" type="text" placeholder="Destination" onclick="hideTutorial()">
