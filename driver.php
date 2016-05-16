@@ -188,7 +188,7 @@
             session_start();
             if (isset($_SESSION['FBID'])) {
                     $pictureID = $_SESSION['FBID'];
-                echo "<div id='hiddenfbidholder'>test</div>";
+                echo "<div id='hiddenfbidholder'>" . $pictureID . "</div>";
             }
         ?>
     </body>
