@@ -232,3 +232,10 @@ window.fbAsyncInit = function() {
         });
 
     }
+
+    function insertUserProfilePic(){
+        FB.api('/me', 'GET', {fields: 'picture'}, function(response) {
+            //document.getElementById('logo').innerHTML = document.getElementById('logo').innerHTML + response.picture;
+            alert(response.picture);
+        });
+    }
