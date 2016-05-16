@@ -175,6 +175,12 @@ function CenterControl(controlDiv, map) {
   });
 
 }
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(getPositionForCentre, errorFunc);
+        }
+        else{
+            alert("Your browser does not support Location Services!")
+        };
 }
     
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
