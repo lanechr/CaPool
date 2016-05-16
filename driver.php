@@ -28,7 +28,13 @@
                 <div id="logo">
                     <a href="index.php"><h1>CaPool</h1></a>
                     <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
-                    <div id="loggedInUserFBImg"></div>
+                    <?php 
+                        if (isset($_SESSION['FBID'])) {
+                            $pictureID = $_SESSION['FBID'];
+		                    echo "<div id='loggedInUserFBImg' style='background-image: url(\"https://graph.facebook.com/" . pictureID ."/picture?type=large\")'></div>";
+                            
+                        }
+                    ?>
                 </div>
             </nav>
 
