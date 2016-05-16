@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#hiddenfacebookloginform").hide();
     $("#status").hide();
     
-    insertUserProfilePic();
+    //insertUserProfilePic();
     //Hide signup
 //    $("#signupOverlay").hide();
 //    $("#signupBlur").hide();
@@ -216,7 +216,7 @@ window.fbAsyncInit = function() {
                     $("#facebookfnameinput").val(response.first_name);
                     $("#facebooklnameinput").val(response.last_name);
                     $("#facebookemailinput").val(response.email);
-                    alert(response.picture);
+                    alert(response.picture.url);
                     $("#hiddenfacebookloginform").submit();
                     });
             } else if (response.status === 'not_authorized') {
