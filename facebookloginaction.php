@@ -42,6 +42,7 @@ $sql="SELECT id FROM users WHERE facebookid='$fbid'";
 $result=mysqli_query($link, $sql);
 
 if (mysqli_num_rows($result) == 1) {
+    //User exists; Sign them in;
     if (isset($_SESSION['failed'])) {
 		unset($_SESSION['failed']);
 	}
@@ -59,16 +60,20 @@ if (mysqli_num_rows($result) == 1) {
     VALUES ('$fbemail', '$fbid', '$fbfname', '$fblname')";
 
     if (!($stmt = $link->query($sql))) {
+        //Query Failed, check to see if email matches and if so add the fbid to the entry, update their name to match facebook, and sign them in
         $sql="SELECT id FROM users WHERE email='$fbemail'";
         $result=mysqli_query($link, $sql);
         if (mysqli_num_rows($result) == 1) {
+            //Email Matches, Update Details
         $sql="UPDATE users SET facebookid='$fbid', fname='$fbfname', lname='$fblname' WHERE email='$fbemail'";
         if (!($stmt = $link->query($sql))) {
+            //Update failed for unknown reason
            echo "Query failed: (" . $link->errno . ") " . $link->error;
              echo "Error: " . $sql . "<br>" . mysqli_error($link);
             $_SESSION['signupfailedsqlerror'] = 1;
-            header('location:index.php'); 
+            header('location:index.php');
         } else {
+            //Update Successful
             echo "User entry updated successfully<br>";
             $_SESSION['auth'] = 1;
             $sql="SELECT id FROM users WHERE facebookid='$fbid'";
@@ -79,9 +84,17 @@ if (mysqli_num_rows($result) == 1) {
             $_SESSION['userID'] = $id[0];
             $_SESSION['FBID'] = $fbid;
            header('location:index.php');
+        } 
+        } else{
+             //email not in database but insert failed for unknown reason
+           echo "Query failed: (" . $link->errno . ") " . $link->error;
+             echo "Error: " . $sql . "<br>" . mysqli_error($link);
+            $_SESSION['signupfailedsqlerror'] = 1;
+            header('location:index.php');
         }
         
     }else{
+        //User created successfully
         echo "User entry created successfully<br>";
         $_SESSION['auth'] = 1;
         $sql="SELECT id FROM users WHERE facebookid='$fbid'";
