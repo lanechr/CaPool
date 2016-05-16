@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#hiddenfacebookloginform").hide();
     $("#status").hide();
     
-    //insertUserProfilePic();
+    insertUserProfilePic();
     //Hide signup
 //    $("#signupOverlay").hide();
 //    $("#signupBlur").hide();
@@ -210,13 +210,12 @@ window.fbAsyncInit = function() {
                 document.getElementById('status').innerHTML = 'You are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
                 
-                FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email, picture'}, function(response) {
+                FB.api('/me', 'GET', {access_token: token, fields: 'first_name, last_name, id, email'}, function(response) {
                     //login though facebook
                     $("#facebookidinput").val(response.id);
                     $("#facebookfnameinput").val(response.first_name);
                     $("#facebooklnameinput").val(response.last_name);
                     $("#facebookemailinput").val(response.email);
-                    alert(response.picture.url);
                     $("#hiddenfacebookloginform").submit();
                     });
             } else if (response.status === 'not_authorized') {
@@ -235,9 +234,9 @@ window.fbAsyncInit = function() {
 
     }
 
-//    function insertUserProfilePic(){
-//        FB.api('/me', 'GET', {fields: 'picture'}, function(response) {
-//            //document.getElementById('logo').innerHTML = document.getElementById('logo').innerHTML + response.picture;
-//            alert(response.picture);
-//        });
-//    }
+    function insertUserProfilePic(){
+        FB.api('/me', 'GET', {fields: 'id'}, function(response) {
+            $('#loggedInUserFBImg').css("background-image", "url(https://graph/facebook.com/"+response.id+"/picture?type=large/)");
+            alert("worked");
+        });
+    }

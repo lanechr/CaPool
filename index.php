@@ -57,7 +57,7 @@ session_start();
                 <div id="logo">
                     <a href="index.php"><h1>CaPool</h1></a>
                     <a href="index.php"><h2>Shared Travel, Simplified</h2></a>
-<!--                    <div id="loggedInUserFBImg"></div>-->
+                    <div id="loggedInUserFBImg"></div>
                 </div>
             </nav>
 
