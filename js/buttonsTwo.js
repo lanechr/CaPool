@@ -236,7 +236,7 @@ window.fbAsyncInit = function() {
 
     function insertUserProfilePic(){
         FB.api('/me', 'GET', {fields: 'id'}, function(response) {
-            $('#loggedInUserFBImg').css("background-image", "url(https://graph/facebook.com/"+response.id+"/picture?type=large/)");
+            $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+response.id+"/picture?type=large)");
             alert("worked");
         });
     }
