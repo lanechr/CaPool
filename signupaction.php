@@ -32,9 +32,9 @@ if ($email == "" || $password == "" || $fname == "" || $lname == ""){
 
     //Connect to database
     $db="capool";
-$host="au-cdbr-azure-east-a.cloudapp.net";
-$dbuser="b549e4b6d7c04e";
-$pw="2db4dbdd";
+    $host="au-cdbr-azure-east-a.cloudapp.net";
+    $dbuser="b549e4b6d7c04e";
+    $pw="2db4dbdd";
 
 $link = new mysqli($host, $dbuser, $pw, $db);
 if ($link->connect_errno) {

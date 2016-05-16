@@ -221,7 +221,22 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             }, function(response, status) {
                 if (status === google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
-
+                    
+                //Convert location to latlng
+                var geocoder = new google.maps.Geocoder();
+                var address = document.getElementById('pac-input').value;
+                geocoder.geocode( { 'address' : address }, function( results, status ) {
+                if( status == google.maps.GeocoderStatus.OK ) {
+                    var latlong = results[0].geometry.location;
+                    var destLat = latlong.lat();
+                    var destLong = latlong.lng();
+                    $.post( "insertpassenger.php", { currlat: latitude, currlong: longitude, destlat: destLat, destlong: destLong } );
+                    
+                } else {
+                    alert( 'Geocode was not successful for the following reason: ' + status );
+                }
+            } );
+                    
                 // Showing of sliders once destination inputted
                 $("#drivers").show();
                 $("#sliderTwo").show();
