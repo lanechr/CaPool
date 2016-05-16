@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("#sliderTwo").hide();
     $("#toggle").hide();
     slider();
-    var fbID = document.getElementById('hiddenfbidholder')
+    var fbID = document.getElementById('hiddenfbidholder').innerHTML;
     insertProfilePicByID(fbID);
 });
 
