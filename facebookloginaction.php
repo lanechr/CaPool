@@ -50,6 +50,7 @@ if (mysqli_num_rows($result) == 1) {
     while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
     mysqli_free_result($result);
     $_SESSION['userID'] = $id[0];
+    $_SESSION['FBID'] = $fbid;
 	header('location:index.php');
 		echo "Correct!";
 } else {
@@ -72,7 +73,7 @@ if (mysqli_num_rows($result) == 1) {
         while ($row = mysqli_fetch_row($result)) $id[]=$row[0];
         mysqli_free_result($result);
         $_SESSION['userID'] = $id[0];
-
+        $_SESSION['FBID'] = $fbid;
        header('location:index.php');
     }
 }

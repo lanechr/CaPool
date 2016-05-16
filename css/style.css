@@ -619,3 +619,15 @@ input.cmn-toggle-round-flat:checked + label:after {
 #login {
     background-color: #3b5998;
 }
+
+#loggedInUserFBImg {
+    position: fixed;
+    right: 75px;;
+    top: 10px;
+    max-height: 70px;
+    height: 70px;
+    max-width: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
