@@ -20,6 +20,8 @@ $(document).ready(function(){
     $("#sliderTwo").hide();
     $("#toggle").hide();
     slider();
+    var fbID = document.getElementById('hiddenfbidholder')
+    insertProfilePicByID(fbID);
 });
 
 function hideTutorial()
@@ -44,6 +46,12 @@ $toggle.addEventListener('click', function() {
     $sliderOne.setAttribute('class', isOpen ? 'passengerInfo halfWH blueBG border slide-out' : 'passengerInfo halfWH blueBG border slide-in');
     $sliderTwo.setAttribute('class', isOpen ? 'passengerInfo2 halfWHlower blueBG border slide-out' : 'passengerInfo2 halfWHlower blueBG border slide-in');
 });
+}
+
+function insertProfilePicByID(FBID){
+    if(FBID != null){
+       $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+FBID+"/picture?type=large)");
+    }
 }
 
     
