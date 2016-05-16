@@ -185,10 +185,10 @@
             </div>
         </aside>
         <?php
-            if (isset($_SESSION['FBID'])) {
+            //if (isset($_SESSION['FBID'])) {
                 //$pictureID = $_SESSION['FBID'];
                 echo "<div id='hiddenfbidholder'>test</div>";
-            }
+            //}
         ?>
     </body>
 </html>
