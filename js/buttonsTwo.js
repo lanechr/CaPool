@@ -239,3 +239,7 @@ window.fbAsyncInit = function() {
             $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+response.id+"/picture?type=large)");
         });
     }
+
+function insertProfilePicByID(FBID){
+        $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+FBID+"/picture?type=large)");
+    }
