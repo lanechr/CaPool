@@ -42,6 +42,29 @@ $sql="SELECT id FROM userlocation WHERE id='$userid'";
 }
     }
 
+//Update passenger location if trip in progress
+
+$sql="SELECT id FROM passengers WHERE id='$userid'";
+
+    $result=mysqli_query($link, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        $sql = "UPDATE passengers SET currentlat='$latitude', currentlong='$longitude' WHERE id='$userid'";
+
+        mysqli_query($link, $sql);
+        
+    }
+
+$sql="SELECT id FROM drivers WHERE id='$userid'";
+
+    $result=mysqli_query($link, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        $sql = "UPDATE drivers SET currentlat='$latitude', currentlong='$longitude' WHERE id='$userid'";
+
+        mysqli_query($link, $sql);
+        
+    }
    
 
 $link->close();
