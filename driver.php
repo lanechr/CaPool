@@ -42,12 +42,7 @@
         
         <!-- Section 2: Tutorial Overlay -->
         <div id="tutorial" class="overlay">
-            <div class="marginTop">
-                <div id="arrow">
-                    <img src="images/arrow.png" alt="Driver" class="imageSelect">
-                </div>
-            </div>
-            
+            <div>
             <h1>Destination</h1>
             <h2>Please enter your driving destination</h2>
             
@@ -57,6 +52,7 @@
             <h2>Then choose your passenger with the following icons</h2>
             <img src="images/tick.png" alt="Tick" class="tuteIcons">
             <img src="images/cross.png" alt="Cross" class="tuteIcons">
+            </div>
         </div>
         <div id="tutorialBlur" class="blur fullWH"></div>
         

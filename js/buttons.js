@@ -10,6 +10,8 @@ $(document).ready(function(){
     $("#openingOverlay").hide();
     $("#openingBlur").hide();
     
+    $("#homeLogo").hide();
+    
     // Passenger List
     $(".passengerList").hide();
     $("#passengerOne").show();
@@ -25,6 +27,7 @@ function hideTutorial()
     // Tutorial
     $("#tutorial").hide();
     $("#tutorialBlur").hide();
+    $("#homeLogo").show();
 }
 
 // Used help from the below site for the implementation of slide-in animations
