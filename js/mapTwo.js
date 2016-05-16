@@ -1,7 +1,7 @@
 // A majority of the implementation of Google Maps, relied upon
 // Google's API information, as pressented on their website:
 // https://developers.google.com/maps/documentation/javascript/tutorialS
-
+var USERLOCMARKER;
 var i = 0;
 // Used help from the below site for the cycling through of divs
 // Other ways to do this were known, but this method was more
@@ -33,7 +33,27 @@ $(document).ready(initMap);
         zoom: 13,
         center: {lat: -27.495421, lng: 153.012470}
     });
+        
+    if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(userPinInit, errorFunc);
+        }
+        else{
+            alert("Your browser does not support Location Services!")
+        }
     
+
+        
+    function userPinInit(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var coords = new google.maps.LatLng(latitude, longitude);
+        USERLOCMARKER = new google.maps.Marker({
+                            position: coords,
+                            map: map,
+                            title: 'Pickup Location'
+                        });
+}
+        
     // Create the DIV to hold the control and call the CenterControl()
     // constructor passing in this DIV.
     var centerControlDiv = document.createElement('div');
@@ -224,6 +244,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 function updateUserLocation(){
         navigator.geolocation.getCurrentPosition(getUserLocation, errorFunc1);
+        navigator.geolocation.getCurrentPosition(userPinUpdate, errorFunc1);
     }    
     
     function getUserLocation(position) {
@@ -236,6 +257,13 @@ function updateUserLocation(){
         //alert(latitude);
         $.post( "userlocation.php", { lat: latitude, long: longitude } );       
 };
+
+function userPinUpdate(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var coords = new google.maps.LatLng(latitude, longitude);
+        USERLOCMARKER.setPosition(coords);
+}
     
 
 function errorFunc1(error) {
