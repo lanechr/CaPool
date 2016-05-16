@@ -34,7 +34,6 @@ $(document).ready(function(){
     $("#hiddenfacebookloginform").hide();
     $("#status").hide();
     
-    insertUserProfilePic();
     //Hide signup
 //    $("#signupOverlay").hide();
 //    $("#signupBlur").hide();
@@ -187,6 +186,7 @@ window.fbAsyncInit = function() {
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'You are connected.';
+                insertUserProfilePic();
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
