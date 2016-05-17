@@ -23,16 +23,11 @@
 /*================================================*/
 body, html{
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-}
-
-body {
-    scroll: none;
-    overflow: hidden;
 }
 
 /* - 2. Fonts & Colours
@@ -154,8 +149,8 @@ p{
     margin-bottom: 50px;
 }
 .fullWH{
-    height: 100vh;
-    width: 100vh;
+    height: 100%;
+    width: 100&;
 }
 .halfWH{
     left: 0;
@@ -270,7 +265,7 @@ p{
     position: absolute;
     z-index: 99;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin-top:  15%;
     top: 0;
 }
