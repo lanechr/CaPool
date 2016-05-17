@@ -245,7 +245,7 @@ function insertUserProfilePic() {
     FB.api('/me', 'GET', {
         fields: 'id'
     }, function (response) {
-        if $('#loggedInUserFBImg').length != 0){
+        if ($('#loggedInUserFBImg').length != 0){
             $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/" + response.id + "/picture?type=large)");
         }
     });
