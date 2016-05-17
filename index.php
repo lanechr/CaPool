@@ -133,13 +133,13 @@ session_start();
                 
                 <br>
                 <br>
-                <button class="btn waves-effect waves-light" onclick="showSignup()">Sign Up</button>
+                <button class="btn waves-effect waves-light small" onclick="showSignup()">Sign Up</button>
                 <br>
                 <br>
 
 
                <!--  Buttons for facebook login -->
-                <button class="btn waves-effect waves-light" onclick="login()" id= "login"> Login With Facebook</button>
+                <button class="btn waves-effect waves-light small" onclick="login()" id= "login"> Login With Facebook</button>
                 <br>
                 <br>
                 <div id="status"></div>
