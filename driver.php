@@ -97,17 +97,25 @@
 			<h1 class="marginPix">Tiger Woods</h1>
 
 			<div id="ratingOne" class="marginTop rating">
-				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2 class="ratingText lightBlueBG">52</h2>
+				<div class="ratings">
+					<img src="images/smile.png" alt="Smile" class="ratingIcon">
+					<h2>52</h2>
+				</div>
 
-				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2 class="ratingText orangeBG">1</h2>
+				<div class="ratings ratingsMiddle">
+					<img src="images/frown.png" alt="Frown" class="ratingIcon">
+					<h2>1</h2>
+				</div>
 
-				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2 class="ratingText blackBG">2</h2>
+				<div class="ratings ratingsMiddle">
+					<img src="images/car.png" alt="Car" class="ratingIcon">
+					<h2>2</h2>
+				</div>
 
-				<img src="images/money.png" alt="Payment" class="ratingIcon">
-				<h2 class="ratingText">Parking</h2>
+				<div class="ratings">
+					<img src="images/money.png" alt="Payment" class="ratingIcon">
+					<h2>Parking</h2>
+				</div>
 			</div>
 		</section>
 		<section id="passsengerTwo" class="passengerList">
@@ -116,13 +124,13 @@
 
 			<div id="ratingTwo" class="marginTop rating">
 				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2 class="ratingText lightBlueBG">60</h2>
+				<h2>60</h2>
 
 				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2 class="ratingText orangeBG">7</h2>
+				<h2>7</h2>
 
 				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2 class="ratingText blackBG">1</h2>
+				<h2>1</h2>
 
 				<img src="images/money.png" alt="Payment" class="ratingIcon">
 				<h2>$5</h2>
@@ -134,13 +142,13 @@
 
 			<div id="ratingThree" class="marginTop rating">
 				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2 class="ratingText lightBlueBG">20</h2>
+				<h2>20</h2>
 
 				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2 class="ratingText orangeBG">15</h2>
+				<h2>15</h2>
 
 				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2 class="ratingText blackBG">2</h2>
+				<h2>2</h2>
 
 				<img src="images/money.png" alt="Payment" class="ratingIcon">
 				<h2>$6</h2>
@@ -152,13 +160,13 @@
 
 			<div id="ratingFour" class="marginTop rating">
 				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2 class="ratingText lightBlueBG">10</h2>
+				<h2>10</h2>
 
 				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2 class="ratingText orangeBG">12</h2>
+				<h2>12</h2>
 
 				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2 class="ratingText blackBG">2</h2>
+				<h2>2</h2>
 
 				<img src="images/money.png" alt="Payment" class="ratingIcon">
 				<h2>Parking</h2>
@@ -170,13 +178,13 @@
 
 			<div id="ratingFive" class="marginTop rating">
 				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2 class="ratingText lightBlueBG">90</h2>
+				<h2>90</h2>
 
 				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2 class="ratingText orangeBG">1</h2>
+				<h2>1</h2>
 
 				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2 class="ratingText blackBG">1</h2>
+				<h2>1</h2>
 
 				<img src="images/money.png" alt="Payment" class="ratingIcon">
 				<h2>$8</h2>
