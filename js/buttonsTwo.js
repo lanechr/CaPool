@@ -183,9 +183,7 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             document.getElementById('status').innerHTML = 'You are connected.';
-            $.post("../checkfblogin.php", function (data) {
-                alert("Data Loaded: " + data);
-            });
+            insertUserProfilePic();
         } else if (response.status === 'not_authorized') {
             document.getElementById('status').innerHTML = 'We are not logged in.'
         } else {
@@ -247,7 +245,9 @@ function insertUserProfilePic() {
     FB.api('/me', 'GET', {
         fields: 'id'
     }, function (response) {
-        $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/" + response.id + "/picture?type=large)");
+        if $('#loggedInUserFBImg').length != 0){
+            $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/" + response.id + "/picture?type=large)");
+        }
     });
 }
 
