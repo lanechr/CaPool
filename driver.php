@@ -124,16 +124,16 @@
 
 			<div id="ratingTwo" class="marginTop rating">
 				<img src="images/smile.png" alt="Smile" class="ratingIcon">
-				<h2>60</h2>
+				<h2 class="ratingText lightBlueBG">60</h2>
 
 				<img src="images/frown.png" alt="Frown" class="ratingIcon">
-				<h2>7</h2>
+				<h2 class="ratingText orangeBG">7</h2>
 
 				<img src="images/car.png" alt="Car" class="ratingIcon">
-				<h2>1</h2>
+				<h2 class="ratingText blackBG">1</h2>
 
 				<img src="images/money.png" alt="Payment" class="ratingIcon">
-				<h2>$5</h2>
+				<h2 class="ratingText">$5</h2>
 			</div>
 		</section>
 		<section id="passsengerThree" class="passengerList">
