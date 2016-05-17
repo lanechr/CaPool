@@ -126,7 +126,7 @@ session_start();
               </div>
                 <br>
               
-                <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Log In</p>
+                <button class="btn waves-effect waves-light small" type="submit" name="action"><p class="buttonSubmit">Log In</p>
 <!--                    <i class="material-icons md-24 right inline">send</i>-->
                 </button> 
                 </form>
@@ -139,7 +139,7 @@ session_start();
 
 
                <!--  Buttons for facebook login -->
-                <button class="btn waves-effect waves-light small" onclick="login()" id= "login"> Login With Facebook</button>
+                <button class="btn waves-effect waves-light" onclick="login()" id= "login"> Login With Facebook</button>
                 <br>
                 <br>
                 <div id="status"></div>
