@@ -99,22 +99,22 @@
 			<div id="ratingOne" class="marginTop rating">
 				<div class="ratings">
 					<img src="images/smile.png" alt="Smile" class="ratingIcon">
-					<h2>52</h2>
+					<h2 class="ratingText lightBlueBG">52</h2>
 				</div>
 
 				<div class="ratings ratingsMiddle">
 					<img src="images/frown.png" alt="Frown" class="ratingIcon">
-					<h2>1</h2>
+					<h2 class="ratingText orangeBG">1</h2>
 				</div>
 
 				<div class="ratings ratingsMiddle">
 					<img src="images/car.png" alt="Car" class="ratingIcon">
-					<h2>2</h2>
+					<h2 class="ratingText blackBG">2</h2>
 				</div>
 
 				<div class="ratings">
 					<img src="images/money.png" alt="Payment" class="ratingIcon">
-					<h2>Parking</h2>
+					<h2 class="ratingText">Parking</h2>
 				</div>
 			</div>
 		</section>
