@@ -183,7 +183,7 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
             document.getElementById('status').innerHTML = 'You are connected.';
-            $.post("checkfblogin.php", function (data) {
+            $.post("../checkfblogin.php", function (data) {
                 alert("Data Loaded: " + data);
             });
         } else if (response.status === 'not_authorized') {
