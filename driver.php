@@ -114,7 +114,7 @@
 
 				<div class="ratings">
 					<img src="images/money.png" alt="Payment" class="ratingIcon">
-					<h2 class="ratingText">Parking</h2>
+					<h2 class="ratingText greenBG">Parking</h2>
 				</div>
 			</div>
 		</section>
