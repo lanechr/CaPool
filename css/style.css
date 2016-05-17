@@ -132,7 +132,7 @@ p{
 }
 .ratingsSecond{
     margin-left: 0;
-    margin-right: 15px;
+    margin-right: 0;
 }
 .ratings{
     margin-top: 10px;
@@ -236,6 +236,10 @@ p{
     .ratings{display: inline-block;}
     .selection{display: inline-block;}
     #passenger{margin-left: 10%;}
+    .ratingsSecond{
+        margin-left: 0;
+        margin-right: 15px;
+    }
 }
 
 @media (min-width:992px) {

@@ -84,10 +84,10 @@
 
 	<!-- Section 4 (Aside) - Driver Mode: Passenger Information -->
 	<aside id="sliderOne" class="passengerInfo container blueBG slide-in">
-		<nav id="modeSelection">
+		<!--<nav id="modeSelection">
 			<a href="index.php"><img src="images/driver.png" alt="Driver" class="mode">
 				<h2 class="modeCaption">Driver Mode</h2></a>
-		</nav>
+		</nav>-->
 
 		<!-- List of Passenger to alternate through -->
 		<!--    - Will be retrieved from server in actual website -->
@@ -191,7 +191,7 @@
 			</div>
 		</section>
 
-		<div class="marginTop">
+		<div class="selectionMargin">
 			<img src="images/tick.png" alt="Tick" class="yesNo" id="yes">
 			<img src="images/cross.png" alt="Cross" class="yesNo" id="no" onclick="passengerList()">
 		</div>
