@@ -22,7 +22,7 @@
 /* - 1. Page Constants
 /*================================================*/
 body, html{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
@@ -272,11 +272,6 @@ p{
 /*================================================*/
 .blur{
     background: white;
-     -webkit-filter: blur(20px);
-    -moz-filter: blur(15px);
-    -o-filter: blur(15px);
-    -ms-filter: blur(15px);
-    filter: blur(15px);
     opacity: 0.8;
     z-index: 75;
     position: absolute;
