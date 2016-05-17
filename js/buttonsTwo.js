@@ -247,4 +247,3 @@ function insertProfilePicByID(FBID){
 function fbLogout(){
     FB.Logout();   
 }
-}
