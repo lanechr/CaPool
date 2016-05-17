@@ -102,19 +102,19 @@
 					<h2 class="ratingText lightBlueBG">52</h2>
 				</div>
 
-				<div class="ratings ratingsMiddle">
+				<div class="ratings ratingsSecond">
 					<img src="images/frown.png" alt="Frown" class="ratingIcon">
 					<h2 class="ratingText orangeBG">1</h2>
 				</div>
 
-				<div class="ratings ratingsMiddle">
+				<div class="ratings ratingsSecond">
 					<img src="images/car.png" alt="Car" class="ratingIcon">
 					<h2 class="ratingText blackBG">2</h2>
 				</div>
 
 				<div class="ratings">
 					<img src="images/money.png" alt="Payment" class="ratingIcon">
-					<h2 class="ratingText greenBG">Parking</h2>
+					<h2 class="ratingText greenBG">$5</h2>
 				</div>
 			</div>
 		</section>
@@ -236,7 +236,7 @@
 <!-- driver: http://pixhder.com/gallery/car+drivers+icon/30  -->
 <!-- frown: http://www.freepik.com/free-vector/flat-and-round-vector-emotion-icons_777836.htm#term=sad%20face&page=1&position=1 -->
 <!-- menuIcon: https://www.iconfinder.com/icons/134216/hamburger_lines_menu_icon -->
-<!-- money: http://simpleicon.com/coin-money-6.html -->
+<!-- money: http://www.clipartpanda.com/categories/save-money-icon -->
 <!-- passenger: http://pixhder.com/gallery/car+drivers+icon/32 -->
 <!-- smile: http://www.freepik.com/free-vector/flat-and-round-vector-emotion-icons_777836.htm#term=sad%20face&page=1&position=1 -->
 <!-- tick: http://www.pixempire.com/icon/tick-in-rounded-square-icon.html -->

@@ -73,9 +73,6 @@ p{
 	background: green;
 	color: white;
 }
-.driverList h1{
-    font-size: 1.5em;
-}
 
 /*The following font is an opensource project by google. Found at http://google.github.io/material-design-icons/#icon-font-for-the-web*/
 
@@ -133,6 +130,10 @@ p{
     margin-left: 15px;
     margin-right: 15px;
 }
+.ratingsSecond{
+    margin-left: 0;
+    margin-right: 15px;
+}
 .ratings{
     margin-top: 10px;
     display: block;
@@ -187,6 +188,7 @@ p{
 .marginPix{
     letter-spacing: normal;
     margin-top: 15px;
+    font-size: 1.5em;
 }
 .marginTop{margin-top: 15px;}
 .marginTop10{margin-top: 10px;}
@@ -476,7 +478,9 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 .ratingText {
     height: 42px;
-    width: 50px;
+    min-width: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 5px;
     color: white;
     font-style: normal;
