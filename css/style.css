@@ -30,6 +30,8 @@ body, html{
     text-align: center;
 }
 
+body {scroll="no" style="overflow: hidden"}
+
 /* - 2. Fonts & Colours
 /*================================================*/
 h1, h2, h3{
