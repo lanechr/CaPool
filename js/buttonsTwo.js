@@ -243,3 +243,8 @@ window.fbAsyncInit = function() {
 function insertProfilePicByID(FBID){
         $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+FBID+"/picture?type=large)");
     }
+
+function fbLogout(){
+    FB.Logout();   
+}
+}
