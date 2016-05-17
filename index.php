@@ -7,15 +7,16 @@ session_start();
 
 	<head>
 		<meta charset="utf-8" />
+		<title>CaPool</title>
+		<!-- Mobile Optimisation -->
 		<meta name=viewport content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<title>CaPool</title>
 		<!-- StyleSheets -->
 		<link href="css/reset.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 		<link href="css/loginstyle.css" rel="stylesheet" type="text/css">
-		<!-- Google Materialize style Sheet-->
+		<!-- Google Materialize StyleSheet-->
 		<link rel="stylesheet" href="css/materialize.css">
 		<!-- Google Web Fonts & Icons -->
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic' rel='stylesheet' type='text/css'>
