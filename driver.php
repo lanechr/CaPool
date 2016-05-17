@@ -83,7 +83,7 @@
 	<div id="map" class="map driver-map"></div>
 
 	<!-- Section 4 (Aside) - Driver Mode: Passenger Information -->
-	<aside id="sliderOne" class="passengerInfo halfWH blueBG border slide-in">
+	<aside id="sliderOne" class="passengerInfo container blueBG slide-in">
 		<nav id="modeSelection">
 			<a href="index.php"><img src="images/driver.png" alt="Driver" class="mode">
 				<h2 class="modeCaption">Driver Mode</h2></a>
@@ -114,7 +114,7 @@
 
 				<div class="ratings">
 					<img src="images/money.png" alt="Payment" class="ratingIcon">
-					<h2 class="ratingText greenBG">$5</h2>
+					<h2 class="ratingText greenBG">Parking</h2>
 				</div>
 			</div>
 		</section>
@@ -199,7 +199,7 @@
 
 	<!-- Section 5 (Aside) - Driver Mode: Pickup Options -->
 	<!-- Switches: http://callmenick.com/post/css-toggle-switch-examples -->
-	<aside id="sliderTwo" class="passengerInfo2 halfWHlower blueBG border slide-in">
+	<aside id="sliderTwo" class="passengerInfo2 halfWHlower blueBG slide-in">
 		<div class="topHalf">
 			<div class="switch">
 				<input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>

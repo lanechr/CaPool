@@ -43,8 +43,8 @@ var $toggle = document.getElementById('toggle');
 $toggle.addEventListener('click', function() {
     var isOpen = $sliderOne.classList.contains('slide-in');
 
-    $sliderOne.setAttribute('class', isOpen ? 'passengerInfo halfWH blueBG border slide-out' : 'passengerInfo halfWH blueBG border slide-in');
-    $sliderTwo.setAttribute('class', isOpen ? 'passengerInfo2 halfWHlower blueBG border slide-out' : 'passengerInfo2 halfWHlower blueBG border slide-in');
+    $sliderOne.setAttribute('class', isOpen ? 'passengerInfo container blueBG slide-out' : 'passengerInfo container blueBG slide-in');
+    $sliderTwo.setAttribute('class', isOpen ? 'passengerInfo2 halfWHlower blueBG slide-out' : 'passengerInfo2 halfWHlower blueBG slide-in');
 });
 }
 
