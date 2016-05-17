@@ -112,7 +112,7 @@
 					<h2 class="ratingText blackBG">2</h2>
 				</div>
 
-				<div class="ratings">
+				<div class="ratings ratingsSecond">
 					<img src="images/money.png" alt="Payment" class="ratingIcon">
 					<h2 class="ratingText greenBG">Parking</h2>
 				</div>
