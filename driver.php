@@ -198,7 +198,7 @@
 	</aside>
 
 	<!-- Section 5 (Aside) - Driver Mode: Pickup Options -->
-	<!-- Switches: http://callmenick.com/post/css-toggle-switch-examples -->
+	<!-- Switches: http://callmenick.com/post/css-toggle-switch-examples 
 	<aside id="sliderTwo" class="passengerInfo2 halfWHlower blueBG slide-in">
 		<div class="topHalf">
 			<div class="switch">
@@ -215,7 +215,7 @@
 			</div>
 			<h3 class="pickupSelect">Start Now</h3>
 		</div>
-	</aside>
+	</aside> -->
 	<?php
             session_start();
             if (isset($_SESSION['FBID'])) {
