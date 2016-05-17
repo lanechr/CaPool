@@ -236,7 +236,7 @@ session_start();
         </div>
         
             <form id="logoutform" method="POST" action="logoutaction.php">
-                <button class="btn waves-effect waves-light" type="submit" onclick=fbLogout() name="action"><p class="buttonSubmit">Logout</p>
+                <button class="btn waves-effect waves-light" type="submit" name="action"><p class="buttonSubmit">Logout</p>
                     <i class="material-icons md-24 right inline">account_circle</i>
                 </button>
             </form>

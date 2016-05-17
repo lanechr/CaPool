@@ -3,6 +3,7 @@
 // efficient and succinct:
 // http://stackoverflow.com/questions/6003060/cycle-through-divs
 var token;
+var fbLoggedIn;
 
 function driverList()
 {
@@ -186,7 +187,18 @@ window.fbAsyncInit = function() {
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'You are connected.';
-                insertUserProfilePic();
+                $.ajax({
+                      type: "POST",
+                      url: "somescript.php",
+                      datatype: "html",
+                      data: dataString,
+                      success: function(data) {
+                          var fbLoginStatus = data;
+                          if (fbLoginStatus == "true"){
+                              insertUserProfilePic();
+                          }
+                        }
+                    });
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
@@ -243,7 +255,3 @@ window.fbAsyncInit = function() {
 function insertProfilePicByID(FBID){
         $('#loggedInUserFBImg').css("background-image", "url(https://graph.facebook.com/"+FBID+"/picture?type=large)");
     }
-
-function fbLogout(){
-    FB.Logout();   
-}
