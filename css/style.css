@@ -127,8 +127,8 @@ p{
 }
 #homeLogo h1,h2:hover{cursor: pointer;}
 .ratingsMiddle{
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 0;
+    margin-right: 10px;
 }
 .ratingsSecond{
     margin-left: 0;
@@ -136,7 +136,7 @@ p{
 }
 .ratings{
     margin-top: 10px;
-    display: block;
+    display: inline-block;
 }
 #tutorial {
 	margin-top: 150px;
