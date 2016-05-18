@@ -177,6 +177,8 @@ p{
     position: absolute;
     top: 90px;
     margin-top: 50px;
+    width: 100%;
+    max-width: 435px;
 }
 .passengerInfo2{
     z-index: 75;
@@ -229,8 +231,8 @@ p{
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 25px;
+    padding-left: auto; /* 15px */
+    padding-right: auto; /* 15px */
     overflow: hidden;
 }
 @media (min-width:768px) {
