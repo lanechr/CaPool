@@ -47,5 +47,35 @@ if (!($stmt = $link->query($sql))) {
     echo "Query failed: (" . $link->errno . ") " . $link->error;
 }
 
+
+mysql_select_db("$dbuser", $con);
+
+$article_id = $_GET['id'];
+
+$query = "SELECT * FROM users";
+
+
+while($row = mysql_fetch_array(MYSQL_ASSOC))
+{
+  $id = $row['id'];
+  $email = $row['email'];
+  $password = $row['password'];
+  $facebookid = $row['facebookid'];
+  $fname = $row['fname'];
+  $lname = $row['lname'];
+  $rating = $row['rating'];
+  $responses = $row['responses'];
+  
+  $name = htmlspecialchars($row['name'],ENT_QUOTES);
+  $email = htmlspecialchars($row['email'],ENT_QUOTES);
+  $password = htmlspecialchars($row['password'],ENT_QUOTES);
+  $facebookid = htmlspecialchars($row['facebookid'],ENT_QUOTES);
+  $fname = htmlspecialchars($row['fname'],ENT_QUOTES);
+  $lname = htmlspecialchars($row['lname'],ENT_QUOTES);
+  $rating = htmlspecialchars($row['rating'],ENT_QUOTES);
+  $responses = htmlspecialchars($row['responses'],ENT_QUOTES);
+
+
+
 $link->close();
 ?> 
