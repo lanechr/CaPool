@@ -267,6 +267,9 @@ p{
     height: 75px;
     margin: auto;
 }
+#logo1{
+    display:inline-block;
+}
 
 /* - 6. Opening Overlay
 /*================================================*/
