@@ -46,10 +46,7 @@ while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
       rating: $rating
     </div>
   ";
-
-
-
-    )
+  )
 
   
 
