@@ -1,4 +1,86 @@
 // http://www.inmotionhosting.com/support/edu/website-design/using-// php-and-mysql/grab-all-comments-from-database
+// http://www.uandblog.com/How-to-login-or-signup-with-facebook-API-using-PHP
+
+<?php 
+//Session Details
+session_start();
+
+
+
+//Connect to database
+$db="capool";
+$host="au-cdbr-azure-east-a.cloudapp.net";
+$dbuser="b549e4b6d7c04e";
+$pw="2db4dbdd";
+
+//Connect to database
+$link = new mysqli($host, $dbuser, $pw, $db);
+if ($link->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
+}
+
+$query="SELECT * FROM users'";
+
+$comments = mysql_query($query);
+
+
+while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
+  (
+    $id = $row['id'];
+    $fname = $row['fname'];
+    $lname = $row['lname'];
+    $facebookid = $row['facebookid'];
+    $rating = $row['rating'];
+
+    $id = htmlspecialchars($row['id'],ENT_QUOTES);
+    $fname = htmlspecialchars($row['fname'],ENT_QUOTES);
+    $lname = htmlspecialchars($row['lname'],ENT_QUOTES);
+    $facebookid = htmlspecialchars($row['facebookid'],ENT_QUOTES);
+    $rating= htmlspecialchars($row['rating'],ENT_QUOTES);
+  
+     echo "  <div style='margin:30px 0px;'>
+      id: $id<br />
+      fname: $fname<br />
+      lname: $lnamebr />
+      facebookid: $facebookid<br />
+      rating: $rating
+    </div>
+  ";
+
+
+
+    )
+
+  
+
+$link->close();
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?
 
@@ -9,7 +91,7 @@ if (!$con)
   die('Could not connect: ' . mysql_error());
 }
  
-mysql_select_db("dbuser", $con);
+mysql_select_db("capool", $con);
 
 
 $article_id = $_GET['id'];
@@ -43,8 +125,6 @@ while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
   $responses = htmlspecialchars($row['responses'],ENT_QUOTES);
   
 }
-
-
 
 
 
