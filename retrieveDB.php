@@ -37,21 +37,14 @@ while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
     $lname = htmlspecialchars($row['lname'],ENT_QUOTES);
     $facebookid = htmlspecialchars($row['facebookid'],ENT_QUOTES);
     $rating= htmlspecialchars($row['rating'],ENT_QUOTES);
-  
-     echo "  <div style='margin:30px 0px;'>
-      id: $id<br />
-      fname: $fname<br />
-      lname: $lnamebr />
-      facebookid: $facebookid<br />
-      rating: $rating
-    </div>
-  ";
-  )
+	
+?>
 
-  
+<?php
+	echo
+	"<h1 class="marginPix">[$fname]</h1>" 
 
 $link->close();
-
 ?>
 
 
