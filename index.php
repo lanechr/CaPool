@@ -305,11 +305,7 @@ session_start();
 				// Loop the recordset $results
 				// Each row will be made into an array ($row) using mysql_fetch_array
 				while($row = mysql_fetch_array($results)){
-					$fname = $row['fname'];
-					$lname = $row['lname'];;
-					$rating = $row['rating'];
-					
-					echo "<h1 class=marginPix>[$fname]</h1>" 
+					echo $row['fname'] . "<br />";
 
 					// Close the database connection
 					mysql_close();
