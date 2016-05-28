@@ -282,11 +282,6 @@ session_start();
 
 				<!-- DB Pulling -->
 				<?php 
-				//Session Details
-				session_start();
-
-
-
 				//Connect to database
 				$db="capool";
 				$host="au-cdbr-azure-east-a.cloudapp.net";
@@ -300,9 +295,6 @@ session_start();
 				}
 
 				$query="SELECT * FROM users'";
-
-				$comments = mysql_query($query);
-
 
 				while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
 				  (
@@ -324,7 +316,7 @@ session_start();
                     <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
                     <?php
 						echo
-						"<h1 class="marginPix">[$fname]</h1>" 
+						"<h1 class=marginPix>[$fname]</h1>" 
 
 						$link->close();
 					?>
