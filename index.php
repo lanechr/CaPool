@@ -307,8 +307,9 @@ session_start();
 				while($row = mysql_fetch_array($results)){
 					$fname = $row['fname'];
 				}
+					mysql_close();
 				?>
-					<h1 class="marginPix"><?php echo $fname mysql_close(); ?></h1>
+					<h1 class="marginPix"><?php echo $fname ?></h1>
 					
                     <h2 class="subtitle">503 SWD</h2>
 
