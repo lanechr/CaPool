@@ -281,6 +281,8 @@ session_start();
             <aside id="drivers" class="passengerInfo container whiteBG slide-in">
 
 				<!-- DB Pulling -->
+				<section id="OneDriver" class="driverList">
+                <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
 				<?php 
 				//DB details
 				$db="capool";
@@ -306,18 +308,14 @@ session_start();
 					$fname = $row['fname'];
 					$lname = $row['lname'];;
 					$rating = $row['rating'];
-				}
-				?>
-				
-                <section id="OneDriver" class="driverList">
-                    <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
-                    <?php
-						echo
-						"<h1 class=marginPix>[$fname]</h1>" 
+					
+					echo "<h1 class=marginPix>[$fname]</h1>" 
 
 					// Close the database connection
 					mysql_close();
-					?>
+				}
+				?>
+					
                     <h2 class="subtitle">503 SWD</h2>
 
                     <div id="ratingOne" class="marginTop rating">
