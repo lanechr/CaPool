@@ -305,12 +305,10 @@ session_start();
 				// Loop the recordset $results
 				// Each row will be made into an array ($row) using mysql_fetch_array
 				while($row = mysql_fetch_array($results)){
-					echo "<h1 class=marginPix>"$row['fname']"</h1>";
-
-					// Close the database connection
-					mysql_close();
+					$fname = $row['fname'];
 				}
 				?>
+					<h1 class="marginPix"><?php echo $fname mysql_close(); ?></h1>
 					
                     <h2 class="subtitle">503 SWD</h2>
 
