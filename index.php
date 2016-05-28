@@ -282,34 +282,31 @@ session_start();
 
 				<!-- DB Pulling -->
 				<?php 
-				//Connect to database
+				//DB details
 				$db="capool";
 				$host="au-cdbr-azure-east-a.cloudapp.net";
 				$dbuser="b549e4b6d7c04e";
 				$pw="2db4dbdd";
 
 				//Connect to database
-				$link = new mysqli($host, $dbuser, $pw, $db);
-				if ($link->connect_errno) {
-					echo "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
-				}
+				mysql_connect($host, $dbuser, $pw) or die (mysql_error ());
+				
+				// Select database
+				mysql_select_db($db) or die(mysql_error());
 
-				$query="SELECT * FROM users'";
+				// SQL query
+				$query = "SELECT * FROM users'";
+				
+				// Execute the query (the recordset $results contains the result)
+				$results = mysql_query($query);
 
-				while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
-				  (
-					$id = $row['id'];
+				// Loop the recordset $results
+				// Each row will be made into an array ($row) using mysql_fetch_array
+				while($row = mysql_fetch_array($results)){
 					$fname = $row['fname'];
-					$lname = $row['lname'];
-					$facebookid = $row['facebookid'];
+					$lname = $row['lname'];;
 					$rating = $row['rating'];
-
-					$id = htmlspecialchars($row['id'],ENT_QUOTES);
-					$fname = htmlspecialchars($row['fname'],ENT_QUOTES);
-					$lname = htmlspecialchars($row['lname'],ENT_QUOTES);
-					$facebookid = htmlspecialchars($row['facebookid'],ENT_QUOTES);
-					$rating= htmlspecialchars($row['rating'],ENT_QUOTES);
-
+				}
 				?>
 				
                 <section id="OneDriver" class="driverList">
@@ -318,7 +315,8 @@ session_start();
 						echo
 						"<h1 class=marginPix>[$fname]</h1>" 
 
-						$link->close();
+					// Close the database connection
+					mysql_close();
 					?>
                     <h2 class="subtitle">503 SWD</h2>
 
