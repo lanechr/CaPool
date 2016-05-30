@@ -283,34 +283,7 @@ session_start();
 				<!-- DB Pulling -->
 				<section id="OneDriver" class="driverList">
                 <img src="images/headshotTwo.png" alt="Driver" class="driverImage">
-				<?php 
-				//DB details
-				$db="capool";
-				$host="au-cdbr-azure-east-a.cloudapp.net";
-				$dbuser="b549e4b6d7c04e";
-				$pw="2db4dbdd";
-
-				//Connect to database
-				mysql_connect($host, $dbuser, $pw) or die (mysql_error ());
-				
-				// Select database
-				mysql_select_db($db) or die(mysql_error());
-
-				// SQL query
-				$query = "SELECT * FROM users'";
-				
-				// Execute the query (the recordset $results contains the result)
-				$results = mysql_query($query);
-
-				// Loop the recordset $results
-				// Each row will be made into an array ($row) using mysql_fetch_array
-				while($row = mysql_fetch_array($results)){
-					$fname = $row['fname'];
-				}
-					mysql_close();
-				?>
-					<h1 class="marginPix"><?php echo $fname ?></h1>
-					
+					<h1 class="marginPix">Jessica Jones</h1>
                     <h2 class="subtitle">503 SWD</h2>
 
                     <div id="ratingOne" class="marginTop rating">
