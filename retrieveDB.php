@@ -21,10 +21,11 @@ if ($link->connect_errno) {
 
 $query="SELECT * FROM users'";
 
-$comments = mysql_query($query);
+$comments = mysqli_query($link, $query);
 
 
 while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
+	while($row = mysqli_fetch_array($comments, MYSQL_ASSOC))
   (
     $id = $row['id'];
     $fname = $row['fname'];
